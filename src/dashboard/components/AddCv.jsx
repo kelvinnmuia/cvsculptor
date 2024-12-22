@@ -2,6 +2,7 @@ import { PlusSquare } from 'lucide-react'
 import React from 'react'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { Input } from "@/components/ui/input"
 import {
     Dialog,
     DialogContent,
@@ -30,10 +31,10 @@ function AddCv() {
             <Dialog open={openDialog}>
                 <DialogContent>
                     <DialogHeader>
-                        <DialogTitle>Are you absolutely sure?</DialogTitle>
+                        <DialogTitle>Create New CV</DialogTitle>
                         <DialogDescription>
-                            This action cannot be undone. This will permanently delete your account
-                            and remove your data from our servers.
+                            <p>Add a title for your new cv</p>
+                            <Input className="mt-2 mb-2" placeholder="E.g. Software Engineer CV"/>
                         </DialogDescription>
                         <div className='flex justify-end gap-5'>
                             <Button variant="ghost">Cancel</Button>
