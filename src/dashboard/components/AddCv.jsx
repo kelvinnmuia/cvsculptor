@@ -35,7 +35,7 @@ function AddCv() {
                             This action cannot be undone. This will permanently delete your account
                             and remove your data from our servers.
                         </DialogDescription>
-                        <div>
+                        <div className='flex justify-end gap-5'>
                             <Button variant="ghost">Cancel</Button>
                             <Button>Create</Button>
                         </div>
