@@ -1,18 +1,39 @@
 import { PlusSquare } from 'lucide-react'
 import React from 'react'
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
+
 function AddCv() {
-  return (
-    <div>
-        <div className='p-14 py-24 border 
+    return (
+        <div>
+            <div className='p-14 py-24 border 
         items-center flex 
         justify-center bg-secondary
         rounded-lg h-[280px]
         hover:scale-105 transition-all hover:shadow-md
         cursor-pointer border-dashed'>
-            <PlusSquare />
+                <PlusSquare />
+            </div>
+            <Dialog>
+                <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle>Are you absolutely sure?</DialogTitle>
+                        <DialogDescription>
+                            This action cannot be undone. This will permanently delete your account
+                            and remove your data from our servers.
+                        </DialogDescription>
+                    </DialogHeader>
+                </DialogContent>
+            </Dialog>
+
         </div>
-    </div>
-  )
+    )
 }
 
 export default AddCv
