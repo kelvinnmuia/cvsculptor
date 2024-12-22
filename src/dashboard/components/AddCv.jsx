@@ -1,5 +1,7 @@
 import { PlusSquare } from 'lucide-react'
 import React from 'react'
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
 import {
     Dialog,
     DialogContent,
@@ -9,7 +11,11 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 
+
 function AddCv() {
+
+    const [openDialog, setOpenDialog]=useState(false)
+
     return (
         <div>
             <div className='p-14 py-24 border 
@@ -17,10 +23,11 @@ function AddCv() {
         justify-center bg-secondary
         rounded-lg h-[280px]
         hover:scale-105 transition-all hover:shadow-md
-        cursor-pointer border-dashed'>
+        cursor-pointer border-dashed'
+        onClick={() => setOpenDialog(true)}>
                 <PlusSquare />
             </div>
-            <Dialog>
+            <Dialog open={openDialog}>
                 <DialogContent>
                     <DialogHeader>
                         <DialogTitle>Are you absolutely sure?</DialogTitle>
@@ -28,6 +35,10 @@ function AddCv() {
                             This action cannot be undone. This will permanently delete your account
                             and remove your data from our servers.
                         </DialogDescription>
+                        <div>
+                            <Button variant="ghost">Cancel</Button>
+                            <Button>Create</Button>
+                        </div>
                     </DialogHeader>
                 </DialogContent>
             </Dialog>
