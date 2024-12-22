@@ -34,7 +34,7 @@ function AddCv() {
                         <DialogTitle>Create New CV</DialogTitle>
                         <DialogDescription>
                             <p>Add a title for your new cv</p>
-                            <Input className="mt-2 mb-2" placeholder="E.g. Software Engineer CV"/>
+                            <Input className="my-2" placeholder="E.g. Software Engineer CV"/>
                         </DialogDescription>
                         <div className='flex justify-end gap-5'>
                             <Button variant="ghost">Cancel</Button>
