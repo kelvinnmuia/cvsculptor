@@ -3,6 +3,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from "@/components/ui/input"
+import { v4 as uuidv4 } from 'uuid';
 import {
     Dialog,
     DialogContent,
@@ -16,7 +17,12 @@ import {
 function AddCv() {
 
     const [openDialog, setOpenDialog]=useState(false)
+    const [cvTitle, setCvTitle]=useState();
 
+    const onCreate=()=>{
+        const uuid=uuidv4();
+        console.log(cvTitle, uuid);
+    }
     return (
         <div>
             <div className='p-14 py-24 border 
@@ -34,11 +40,16 @@ function AddCv() {
                         <DialogTitle>Create New CV</DialogTitle>
                         <DialogDescription>
                             <p>Add a title for your new cv</p>
-                            <Input className="my-2" placeholder="E.g. Software Engineer CV"/>
+                            <Input className="my-2" 
+                            placeholder="E.g. Software Engineer CV"
+                            onChange={(e)=>setCvTitle(e.target.value)}
+                            />
                         </DialogDescription>
                         <div className='flex justify-end gap-5'>
-                            <Button variant="ghost">Cancel</Button>
-                            <Button>Create</Button>
+                            <Button onClick={()=>setOpenDialog(false)}variant="ghost">Cancel</Button>
+                            <Button
+                              disabled={!cvTitle} 
+                            oncClick={()=>onCreate()}>Create</Button>
                         </div>
                     </DialogHeader>
                 </DialogContent>
