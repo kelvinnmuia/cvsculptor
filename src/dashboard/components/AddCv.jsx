@@ -18,28 +18,29 @@ import { useUser } from '@clerk/clerk-react'
 
 function AddCv() {
 
-    const [openDialog, setOpenDialog] = useState(false)
-    const [cvTitle, setCvTitle] = useState();
-    const { user } = useUser();
-    const [loading, setLoading] = useState(false)
+    const [openDialog,setOpenDialog]=useState(false)
+    const [cvTitle,setCvTitle]=useState();
+    const {user}=useUser();
+    const [loading,setLoading]=useState(false);
 
-    const onCreate = async () => {
-        setLoading(true);
+    const onCreate=async()=>{
+        setLoading(true)
         const uuid = uuidv4();
-        const data = {
-            data: {
-                title: cvTitle,
-                cvId: uuid,
-                userEmail: user?.primaryEmailAddress?.emailAddress,
-                userName: user?.fullName
+        const data={
+            data:{
+                title:cvTitle,
+                cvId:uuid,
+                userEmail:user?.primaryEmailAddress?.emailAddress,
+                userName:user?.fullName
             }
         }
-        GlobalApi.CreateNewCv(data).then(resp => {
+        GlobalApi.CreateNewCv(data).then(resp=>{
             console.log(resp);
-            if (resp) {
+            if(resp)
+            {
                 setLoading(false);
             }
-        }, (error) => {
+        },(error)=>{
             setLoading(false);
         })
     }
@@ -51,7 +52,7 @@ function AddCv() {
         rounded-lg h-[280px]
         hover:scale-105 transition-all hover:shadow-md
         cursor-pointer border-dashed'
-                onClick={() => setOpenDialog(true)}>
+                onClick={()=>setOpenDialog(true)}>
                 <PlusSquare />
             </div>
             <Dialog open={openDialog}>
@@ -66,13 +67,13 @@ function AddCv() {
                             />
                         </DialogDescription>
                         <div className='flex justify-end gap-5'>
-                            <Button onClick={() => setOpenDialog(false)} variant="ghost">Cancel</Button>
+                            <Button onClick={()=>setOpenDialog(false)} variant="ghost">Cancel</Button>
                             <Button
-                                disabled={!cvTitle || loading}
-                                oncClick={() => onCreate()}>
-                                {loading ?
-                                    <Loader2 className='animate-spin' /> : 'Create'
-                                }
+                                disabled={!cvTitle||loading}
+                                onClick={()=>onCreate()}>
+                                    {loading?
+                                    <Loader2 className='animate-spin' /> :'Create'
+                                    }
                             </Button>
                         </div>
                     </DialogHeader>
