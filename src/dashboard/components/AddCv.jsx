@@ -29,7 +29,7 @@ function AddCv() {
         const data = {
             data: {
                 title: cvTitle,
-                cvid: uuid,
+                cvId: uuid,
                 userEmail: user?.primaryEmailAddress?.emailAddress,
                 userName: user?.fullName
             }
