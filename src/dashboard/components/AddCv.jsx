@@ -16,12 +16,28 @@ import {
 import { useUser } from '@clerk/clerk-react'
 
 
+/**
+ * @function AddCv
+ *
+ * @description
+ * A component that renders a card with a plus icon, when clicked it opens a dialog to create a new cv.
+ * The dialog asks for the title of the new cv.
+ *
+ * @returns {JSX.Element} The component.
+ */
 function AddCv() {
-
+    
     const [openDialog,setOpenDialog]=useState(false)
     const [cvTitle,setCvTitle]=useState();
     const {user}=useUser();
     const [loading,setLoading]=useState(false);
+
+/**
+ * Handles the creation of a new CV by generating a unique identifier,
+ * preparing the data including title, cvId, user email, and username, 
+ * and sending the data to the API. Updates the loading state during 
+ * the process and logs the response.
+ */
 
     const onCreate=async()=>{
         setLoading(true)

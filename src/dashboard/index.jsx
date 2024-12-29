@@ -3,20 +3,24 @@ import AddCv from './components/AddCv'
 import { useUser } from '@clerk/clerk-react'
 import GlobalApi from './../../service/GlobalApi';
 import CvCardItem from './components/CvCardItem';
+
 function Dashboard() {
   
   const {user}=useUser();
-  const [cvList, setCvList]=useState([]);
+  const [cvList,setCvList]=useState([]);
   useEffect(()=>{
     user&&GetCvsList();
   },[user])
 
-  /* gets user cv list */
-  const GetCvsList=()=>{
+  /**
+   * Fetches the list of CVs for the current user and updates the state.
+   */
+  const GetCvsList = () => {
     GlobalApi.GetUserCvs(user?.primaryEmailAddress?.emailAddress)
-    .then(resp=>{
-      setCvList(resp.data.data);
-    })
+      .then(resp => {
+        // Update the cvList state with the fetched data
+        setCvList(resp.data.data);
+      })
   }
   return (
     <div className='p-10 md:px-20 lg:px-32'>
@@ -27,7 +31,7 @@ function Dashboard() {
     mt-10
     ">
       <AddCv />
-      {cvList.length>0&&cvList.map((cv, index)=>(
+      {cvList.length>0&&cvList.map((cv,index)=>(
         <CvCardItem cv={cv} key={index} />
       ))}
     </div>
