@@ -8,6 +8,7 @@ import { RouterProvider } from 'react-router-dom'
 import Home from './home/index.jsx'
 import Dashboard from './dashboard/index.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
+import EditCv from './dashboard/cv/cvId/edit'
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 const router=createBrowserRouter([
@@ -19,7 +20,8 @@ const router=createBrowserRouter([
         element:<Dashboard/>
       },
       {
-        path:'/dashboard/cv/:cvId/edit'
+        path:'/dashboard/cv/:cvId/edit',
+        element:<EditCv/>
       }
     ]
   },

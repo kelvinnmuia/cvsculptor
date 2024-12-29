@@ -11,6 +11,9 @@ const axiosClient=axios.create({
 
 const CreateNewCv=(data)=>axiosClient.post('/user-cvs', data)
 
+const GetUserCvs=(userEmail)=>axiosClient.get('/user-cvs');
+
 export default{
-    CreateNewCv
+    CreateNewCv,
+    GetUserCvs
 }
