@@ -15,7 +15,8 @@ function CvCardItem({cv}) {
     <div>
       <div className='p-14 bg-secondary flex
       items-center justify-center h-[280px] 
-      border border-primary rounded-lg'>
+      border border-primary rounded-lg
+      hover:scale-105 transition-all hover:shadow-md shadow-primary'>
         <Notebook />
       </div>
       <h2 className='text-center my-1'>{cv.title}</h2>
