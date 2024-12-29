@@ -11,7 +11,7 @@ const axiosClient=axios.create({
 
 const CreateNewCv=(data)=>axiosClient.post('/user-cvs', data)
 
-const GetUserCvs=(userEmail)=>axiosClient.get('/user-cvs');
+const GetUserCvs=(userEmail)=>axiosClient.get('/user-cvs?filters[userEmail][$eq]='+userEmail);
 
 export default{
     CreateNewCv,
