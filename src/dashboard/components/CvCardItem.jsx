@@ -9,17 +9,18 @@ import React from 'react'
  * @param {string} cv.title - The title of the CV.
  * @returns {React.ReactElement} A React element for the CV card component.
  */
-function CvCardItem(cv) {
+
+function CvCardItem({cv}) {
   return (
     <div>
-        <div className='p-14 bg-secondary flex
-    items-center justify-center h-[280px]
-    border border-primary rounded-lg'>
+      <div className='p-14 bg-secondary flex
+      items-center justify-center h-[280px]'>
         <Notebook />
-        </div>
-        <h2 className='text-center my-1'>{cv.title}</h2>
+      </div>
+      <h2 className='text-center my-1'>{cv.title}</h2>
     </div>
   )
 }
 
 export default CvCardItem
+

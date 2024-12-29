@@ -4,6 +4,14 @@ import { useUser } from '@clerk/clerk-react'
 import GlobalApi from './../../service/GlobalApi';
 import CvCardItem from './components/CvCardItem';
 
+  /**
+   * Dashboard component that renders the user's CVs and allows them to create a new one.
+   *
+   * Fetches the list of CVs for the current user on mount and displays them in a grid.
+   * The AddCv component is also rendered, allowing the user to create a new CV.
+   *
+   * @returns {React.ReactElement} The rendered Dashboard component.
+   */
 function Dashboard() {
   
   const {user}=useUser();
