@@ -1,5 +1,6 @@
 import { Notebook } from 'lucide-react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 /**
  * A component that renders a card for a CV.
  *
@@ -12,7 +13,7 @@ import React from 'react'
 
 function CvCardItem({cv}) {
   return (
-    <div>
+    <Link to={'/dashboard/cv/'+cv.cvId+"/edit"}>
       <div className='p-14 bg-secondary flex
       items-center justify-center h-[280px] 
       border border-primary rounded-lg
@@ -20,7 +21,7 @@ function CvCardItem({cv}) {
         <Notebook />
       </div>
       <h2 className='text-center my-1'>{cv.title}</h2>
-    </div>
+    </Link>
   )
 }
 

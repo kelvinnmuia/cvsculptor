@@ -14,6 +14,7 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import { useUser } from '@clerk/clerk-react'
+import { useNavigate } from 'react-router-dom'
 
 
 /**
@@ -31,6 +32,7 @@ function AddCv() {
     const [cvTitle,setCvTitle]=useState();
     const {user}=useUser();
     const [loading,setLoading]=useState(false);
+    const navigation=useNavigate();
 
 /**
  * Handles the creation of a new CV by generating a unique identifier,
@@ -51,10 +53,11 @@ function AddCv() {
             }
         }
         GlobalApi.CreateNewCv(data).then(resp=>{
-            console.log(resp);
+            console.log(resp.data.data.documentId);
             if(resp)
             {
                 setLoading(false);
+                navigation('/dashboard/cv/'+resp.data.data.documentId+"/edit")
             }
         },(error)=>{
             setLoading(false);
