@@ -17,6 +17,9 @@ const router=createBrowserRouter([
       {
         path:'/dashboard',
         element:<Dashboard/>
+      },
+      {
+        path:'/dashboard/cv/:cvId/edit'
       }
     ]
   },
