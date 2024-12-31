@@ -12,6 +12,7 @@ function CvPreview() {
       {/* Education */}
 
       {/* Skills */}
+      CvPreview
     </div>
   )
 }
