@@ -3,7 +3,15 @@ import React from 'react'
 function CvPreview() {
   return (
     <div>
-      CvPreview
+      {/* Personal Details */} 
+
+      {/* Summary */}
+
+      {/* Professional Experience */}
+
+      {/* Education */}
+
+      {/* Skills */}
     </div>
   )
 }
