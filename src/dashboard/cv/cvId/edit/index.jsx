@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import FormSection from './components/FormSection';
+import CvPreview from './components/CvPreview';
 
 function EditCv() {
     const params=useParams();
@@ -13,7 +14,7 @@ function EditCv() {
       {/* Form Section */}
       <FormSection/>
       {/* Preview Section */}
-
+      <CvPreview/>
     </div>
   )
 }
