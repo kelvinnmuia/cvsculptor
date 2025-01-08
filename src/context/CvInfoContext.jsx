@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const CvInfoContext = React.createContext(null);
+export const CvInfoContext=createContext(null);
