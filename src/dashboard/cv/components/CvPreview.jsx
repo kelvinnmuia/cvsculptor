@@ -7,7 +7,10 @@ import { CvInfoContext } from '@/context/CvInfoContext'
 function CvPreview() {
   const {cvInfo,setCvInfo}=useContext(CvInfoContext);
   return (
-    <div className='shadow-lg h-full p-14 border-t-[20px]'>
+    <div className='shadow-lg h-full p-14 border-t-[20px]'
+    style={{
+      borderColor:cvInfo?.themeColor
+    }}>
       {/* Personal Details */}
       <PersonalDetailPreview cvInfo={cvInfo}/>
       {/* Summary */}
