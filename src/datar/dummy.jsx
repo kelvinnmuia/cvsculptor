@@ -17,7 +17,7 @@ export default{
             startDate:'Jan 2021',
             endDate:'',
             currentlyWorking:true,
-            workSummary:'experienced software engineer with years of experience as a software engineer',
+            workSummary:'Served as electronic technician in an industrial machinery firm. Conducted build, test and repair work on electronic components for 15 unique product lines. Exceeded corporate performance targets with a 90% plus score on all KPIs for all quarters of employment. Chosen from a team of 20 competing team members nationwide to provide in-person and remote training for technician interns across the business. Trained 18 new starters in corporate policy and industry-leading health and safety practises.',
         },
     ],
     education:[
