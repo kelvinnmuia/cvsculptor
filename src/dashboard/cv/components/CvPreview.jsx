@@ -4,6 +4,7 @@ import PersonalDetailPreview from './preview/PersonalDetailPreview'
 import { CvInfoContext } from '@/context/CvInfoContext'
 import SummaryPreview from './preview/SummaryPreview';
 import ExperiencePreview from './preview/ExperiencePreview';
+import EducationalPreview from './preview/EducationalPreview';
 
 
 function CvPreview() {
@@ -22,7 +23,8 @@ function CvPreview() {
       <ExperiencePreview cvInfo={cvInfo} />
 
       {/* Education */}
-
+      <EducationalPreview cvInfo={cvInfo} />
+      
       {/* Skills */}
 
     </div>

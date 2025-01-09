@@ -19,16 +19,36 @@ export default{
             currentlyWorking:true,
             workSummary:'Served as electronic technician in an industrial machinery firm. Conducted build, test and repair work on electronic components for 15 unique product lines. Exceeded corporate performance targets with a 90% plus score on all KPIs for all quarters of employment. Chosen from a team of 20 competing team members nationwide to provide in-person and remote training for technician interns across the business. Trained 18 new starters in corporate policy and industry-leading health and safety practises.',
         },
+        {
+            id:2,
+            title:'JavaScript Developer',
+            companyName:'Google',
+            city:'California',
+            state:'SF',
+            startDate:'Jan 2019',
+            endDate:'Nov 2020',
+            currentlyWorking:false,
+            workSummary:'Served as electronic technician in an industrial machinery firm. Conducted build, test and repair work on electronic components for 15 unique product lines. Exceeded corporate performance targets with a 90% plus score on all KPIs for all quarters of employment. Chosen from a team of 20 competing team members nationwide to provide in-person and remote training for technician interns across the business. Trained 18 new starters in corporate policy and industry-leading health and safety practises.',
+        }
     ],
     education:[
         {
             id:1,
-            universityName:'Havard Universi',
+            universityName:'Havard University',
             startDate:'Aug 2018',
             endDate:'Dec 2019',
-            degree:'Master',
+            degree:'Masters',
             major:'Computer Science',
-            description:'Lorem Ipsum Lorem Ipsum'
+            description:'The philosophy of the Bachelor of Science in Computer Science is to impart and foster students with the requisite knowledge'
+        },
+        {
+            id:2,
+            universityName:'Stanford University',
+            startDate:'Aug 2017',
+            endDate:'Dec 2013',
+            degree:'Bachelor of Science',
+            major:'Computer Science',
+            description:'The philosophy of the Bachelor of Science in Computer Science is to impart and foster students with the requisite knowledge'
         }
     ],
     skills:[
