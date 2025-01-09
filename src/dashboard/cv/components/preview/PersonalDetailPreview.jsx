@@ -28,6 +28,11 @@ function PersonalDetailPreview({cvInfo}) {
         }}
         >{cvInfo?.email}</h2>
       </div>
+      <hr className='border-[1.5px] my-2' 
+      style={{
+        borderColor:cvInfo?.themeColor
+      }}
+      />
     </div>
   )
 }
