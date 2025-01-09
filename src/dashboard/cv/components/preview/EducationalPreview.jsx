@@ -14,7 +14,11 @@ function EducationalPreview({cvInfo}) {
 
       {cvInfo?.education.map((education,index)=>(
         <div key={index} className='my-5'>
-            <h2 className='text-sm font-bold'>{education.universityName}</h2>
+            <h2 className='text-sm font-bold'
+            style={{
+                color:cvInfo?.themeColor
+            }}
+            >{education.universityName}</h2>
             <h2 className='text-xs flex justify-between'>{education?.degree} in {education?.major}
                 <span>{education?.startDate} - {education?.endDate}</span>
             </h2>

@@ -14,7 +14,11 @@ function ExperiencePreview({cvInfo}) {
 
       {cvInfo?.experience.map((experience,index)=>(
         <div key={index} className='my-5'>
-          <h2 className='text-sm font-bold'>{experience?.title}</h2>
+          <h2 className='text-sm font-bold'
+          style={{
+            color:cvInfo?.themeColor
+          }}
+          >{experience?.title}</h2>
           <h2 className='text-xs flex justify-between'>{experience?.companyName}, 
             {experience?.city}, 
             {experience?.state}
