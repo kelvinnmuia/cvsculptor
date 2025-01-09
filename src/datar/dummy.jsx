@@ -6,7 +6,7 @@ export default{
     phone:'123456789',
     email:'johnde@gmail.com',
     themeColor:'#ff6666',
-    summary:'lorem ipsum sit amet',
+    summary:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.',
     experience:[
         {
             id:1,

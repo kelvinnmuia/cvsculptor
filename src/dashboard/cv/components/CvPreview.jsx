@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import PersonalDetailPreview from './preview/PersonalDetailPreview'
 import { CvInfoContext } from '@/context/CvInfoContext'
+import SummaryPreview from './preview/SummaryPreview';
 
 
 function CvPreview() {
@@ -14,7 +15,8 @@ function CvPreview() {
       {/* Personal Details */}
       <PersonalDetailPreview cvInfo={cvInfo}/>
       {/* Summary */}
-
+      <SummaryPreview cvInfo={cvInfo} />
+      
       {/* Professional Experience */}
 
       {/* Education */}
