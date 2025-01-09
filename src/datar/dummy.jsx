@@ -55,17 +55,22 @@ export default{
         {
             id:1,
             name:'Angular',
-            rating: 80,
+            rating: 75,
         },
         {
             id:2,
             name:'React',
-            rating:100
+            rating:85
         },
         {
             id:3,
+            name:'Bootstrap',
+            rating:70
+        },
+        {
+            id:4,
             name:'Nodejs',
-            rating:100
+            rating:90
         }
     ]
 }
