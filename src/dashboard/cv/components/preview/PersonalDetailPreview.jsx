@@ -9,11 +9,13 @@ function PersonalDetailPreview({cvInfo}) {
       }}
       >
         {cvInfo?.firstName} {cvInfo?.lastName}</h2>
-      <h2 className='text-center text-sm font-medium'
+      <h2 className='text-center text-sm font-medium'>
+        {cvInfo?.jobTitle}</h2>
+      <h2 className='text-center font-normal text-xs'
       style={{
-        color:cvInfo?.themeColor
+        color:cvInfo?.themColor
       }}
-      >{cvInfo?.jobTitle}</h2>
+      >{cvInfo?.address}</h2>
     </div>
   )
 }
