@@ -13,9 +13,21 @@ function PersonalDetailPreview({cvInfo}) {
         {cvInfo?.jobTitle}</h2>
       <h2 className='text-center font-normal text-xs'
       style={{
-        color:cvInfo?.themColor
+        color:cvInfo?.themeColor
       }}
       >{cvInfo?.address}</h2>
+      <div className='flex justify-between'>
+        <h2 className='font-normal text-xs'
+        style={{
+          color:cvInfo?.themeColor
+        }}
+        >{cvInfo?.phone}</h2>
+        <h2 className='font-normal text-xs'
+        style={{
+          color:cvInfo?.themeColor
+        }}
+        >{cvInfo?.email}</h2>
+      </div>
     </div>
   )
 }
