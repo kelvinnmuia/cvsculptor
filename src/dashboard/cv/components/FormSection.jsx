@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, LayoutGrid } from 'lucide-react'
 
 function FormSection() {
   const [activeFormIndex,setActiveFormIndex]=useState(2);
+  const [enableNext,setEnableNext]=useState(false);
   return (
     <div>
       <div className='flex justify-between items-center'>
@@ -14,14 +15,16 @@ function FormSection() {
           {activeFormIndex>1
           &&<Button size="sm"
           onClick={()=>setActiveFormIndex(activeFormIndex-1)}> <ArrowLeft/></Button>}
-          <Button className="flex gap-2" size="sm"
+          <Button 
+          disabled={!enableNext}
+          className="flex gap-2" size="sm"
           onClick={() =>setActiveFormIndex(activeFormIndex+1)}
           > Next 
             <ArrowRight/> </Button>
         </div>
       </div>
       {/* Personal Detail */}
-      {activeFormIndex==1? <PersonalDetail/>
+      {activeFormIndex==1? <PersonalDetail enableNext={(v)=>setEnableNext(v)}/>
       :null}
       {/* Summary */}
 

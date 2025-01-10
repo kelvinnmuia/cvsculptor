@@ -3,7 +3,7 @@ import { Input } from '@/components/ui/input'
 import { CvInfoContext } from '@/context/CvInfoContext'
 import React, { useContext } from 'react'
 
-function PersonalDetail() {
+function PersonalDetail({enableNext}) {
     const {cvInfo,setCvInfo}=useContext(CvInfoContext)
 
     const handleInputChange=(e)=>{
@@ -17,6 +17,7 @@ function PersonalDetail() {
 
     const onSave=(e)=>{
         e.preventDefault();
+        enableNext(true)
     }
   return (
     <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
