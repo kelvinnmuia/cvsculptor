@@ -1,20 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PersonalDetail from './forms/PersonalDetail'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, LayoutGrid } from 'lucide-react'
+import { ArrowLeft, ArrowRight, LayoutGrid } from 'lucide-react'
 
 function FormSection() {
+  const [activeFormIndex,setActiveFormIndex]=useState(2);
   return (
     <div>
-      <div>
+      <div className='flex justify-between items-center'>
         <Button variant="outline" size="sm" 
         className="flex gap-2"> <LayoutGrid/>Theme</Button>
-        <div>
-          <Button className="flex gap-2" size="sm"> Next <ArrowRight/> </Button>
+        <div className='flex gap-2'>
+          {activeFormIndex>1
+          &&<Button size="sm"
+          onClick={()=>setActiveFormIndex(activeFormIndex-1)}> <ArrowLeft/></Button>}
+          <Button className="flex gap-2" size="sm"
+          onClick={() =>setActiveFormIndex(activeFormIndex+1)}
+          > Next 
+            <ArrowRight/> </Button>
         </div>
       </div>
       {/* Personal Detail */}
-      <PersonalDetail/>
+      {activeFormIndex==1? <PersonalDetail/>
+      :null}
       {/* Summary */}
 
       {/* Experience */}
