@@ -1,13 +1,14 @@
 import React from 'react'
 import PersonalDetail from './forms/PersonalDetail'
 import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, LayoutGrid } from 'lucide-react'
 
 function FormSection() {
   return (
     <div>
       <div>
-        <Button>Theme</Button>
+        <Button variant="outline" size="sm" 
+        className="flex gap-2"> <LayoutGrid/>Theme</Button>
         <div>
           <Button className="flex gap-2" size="sm"> Next <ArrowRight/> </Button>
         </div>
