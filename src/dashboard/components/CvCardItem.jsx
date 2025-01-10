@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 
 function CvCardItem({cv}) {
   return (
-    <Link to={'/dashboard/cv/'+cv.cvId+"/edit"}>
+    <Link to={'/dashboard/cv/'+cv.documentId+"/edit"}>
       <div className='p-14 bg-secondary flex
       items-center justify-center h-[280px] 
       border border-primary rounded-lg

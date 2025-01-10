@@ -1,13 +1,28 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { CvInfoContext } from '@/context/CvInfoContext'
-import React, { useContext } from 'react'
+import { LoaderCircle } from 'lucide-react';
+import React, { useContext, useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 
-function PersonalDetail({enableNext}) {
+function PersonalDetail({enabledNext}) {
+    const params=useParams();
     const {cvInfo,setCvInfo}=useContext(CvInfoContext)
+
+    const [formData,setFormData]=useState();
+    const [loading,setLoading]=useState(false);
+
+    useEffect(()=>{
+        console.log(params)
+    },[])
 
     const handleInputChange=(e)=>{
         const {name,value}=e.target;
+
+        setFormData({
+            ...formData,
+            [name]:value
+        })
 
         setCvInfo({
             ...cvInfo,
@@ -17,7 +32,18 @@ function PersonalDetail({enableNext}) {
 
     const onSave=(e)=>{
         e.preventDefault();
-        enableNext(true)
+        setLoading(true)
+        const data={
+            data:formData
+        }
+
+        GlobalApi.UpdateCvDetail(params?.cvId,data).then(resp=>{
+            console.log(resp);
+            enabledNext(true);
+            setLoading(false);
+        },(error)=>{
+            setLoading(false);
+        })
     }
   return (
     <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
@@ -52,7 +78,10 @@ function PersonalDetail({enableNext}) {
                 </div>
             </div>
             <div className='mt-3 flex justify-end'>
-                <Button type="submit">Save</Button>
+                <Button type="submit"
+                disabled={loading}>
+                    {loading?<LoaderCircle className='animate-spin'/>:'Save'}
+                    Save</Button>
             </div>
         </form>
     </div>
