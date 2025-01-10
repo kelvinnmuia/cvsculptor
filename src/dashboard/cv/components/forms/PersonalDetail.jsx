@@ -7,14 +7,23 @@ function PersonalDetail() {
     const {cvInfo,setCvInfo}=useContext(CvInfoContext)
 
     const handleInputChange=(e)=>{
+        const {name,value}=e.target;
 
+        setCvInfo({
+            ...cvInfo,
+            [name]:value
+        })
+    }
+
+    const onSave=(e)=>{
+        e.preventDefault();
     }
   return (
     <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
         <h2 className='font-bold text-lg'>Personal Detail</h2>
         <p>Get Started with the basic information</p>
 
-        <form>
+        <form onSubmit={onSave}>
             <div className='grid grid-cols-2 mt-5 gap-3'>
                 <div>
                     <label className='text-sm'>First Name</label>
@@ -41,8 +50,8 @@ function PersonalDetail() {
                     <Input name="email" required onChange={handleInputChange}/>
                 </div>
             </div>
-            <div>
-                <Button>Save</Button>
+            <div className='mt-3 flex justify-end'>
+                <Button type="submit">Save</Button>
             </div>
         </form>
     </div>
