@@ -4,6 +4,7 @@ import { CvInfoContext } from '@/context/CvInfoContext'
 import { LoaderCircle } from 'lucide-react';
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import GlobalApi from './../../../../../service/GlobalApi';
 
 function PersonalDetail({enabledNext}) {
     const params=useParams();
@@ -17,6 +18,7 @@ function PersonalDetail({enabledNext}) {
     },[])
 
     const handleInputChange=(e)=>{
+        enabledNext(false)
         const {name,value}=e.target;
 
         setFormData({
@@ -32,7 +34,9 @@ function PersonalDetail({enabledNext}) {
 
     const onSave=(e)=>{
         e.preventDefault();
+        enabledNext(true)
         setLoading(true)
+        
         const data={
             data:formData
         }
@@ -80,8 +84,8 @@ function PersonalDetail({enabledNext}) {
             <div className='mt-3 flex justify-end'>
                 <Button type="submit"
                 disabled={loading}>
-                    {loading?<LoaderCircle className='animate-spin'/>:'Save'}
-                    Save</Button>
+                    {loading?<LoaderCircle className='animate-spin' />:'Save'}
+                    </Button>
             </div>
         </form>
     </div>
