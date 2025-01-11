@@ -5,6 +5,7 @@ import { LoaderCircle } from 'lucide-react';
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import GlobalApi from './../../../../../service/GlobalApi';
+import { toast } from 'sonner';
 
 function PersonalDetail({enabledNext}) {
     const params=useParams();
@@ -45,6 +46,7 @@ function PersonalDetail({enabledNext}) {
             console.log(resp);
             enabledNext(true);
             setLoading(false);
+            toast("Event has been created.")
         },(error)=>{
             setLoading(false);
         })
