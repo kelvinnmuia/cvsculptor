@@ -46,7 +46,7 @@ function PersonalDetail({enabledNext}) {
             console.log(resp);
             enabledNext(true);
             setLoading(false);
-            toast("Event has been created.")
+            toast("Details updated successfully");
         },(error)=>{
             setLoading(false);
         })
