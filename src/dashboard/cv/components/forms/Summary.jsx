@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import React from 'react'
 
 function Summary() {
@@ -6,6 +7,13 @@ function Summary() {
       <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
         <h2 className='font-bold text-lg'>Summary</h2>
         <p>Add Summary for your job title</p>
+
+        <div>
+            <div className="flex justify-between">
+                <label>Add Summary</label>
+                <Button variant="outline"size="sm" className="border-primary text-primary">Generate from AI</Button>
+            </div>
+        </div>
       </div>
     </div>
   )
