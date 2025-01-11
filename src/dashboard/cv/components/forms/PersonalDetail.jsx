@@ -64,23 +64,28 @@ function PersonalDetail({enabledNext}) {
                 </div>
                 <div>
                     <label className='text-sm'>Last Name</label>
-                    <Input name="lastName" required onChange={handleInputChange}/>
+                    <Input name="lastName" required onChange={handleInputChange}
+                    defaultValue={cvInfo?.lastName} />
                 </div>
                 <div className='col-span-2'>
                     <label className='text-sm'>Job Title</label>
-                    <Input name="jobTitle" required onChange={handleInputChange}/>
+                    <Input name="jobTitle" required onChange={handleInputChange}
+                    defaultValue={cvInfo?.jobTitle} />
                 </div>
                 <div className='col-span-2'>
                     <label className='text-sm'>Address</label>
-                    <Input name="address" required onChange={handleInputChange}/>
+                    <Input name="address" required onChange={handleInputChange}
+                    defaultValue={cvInfo?.address} />
                 </div>
                 <div>
                     <label className='text-sm'>Phone</label>
-                    <Input name="phone" required onChange={handleInputChange}/>
+                    <Input name="phone" required onChange={handleInputChange}
+                    defaultValue={cvInfo?.phone}/>
                 </div>
                 <div>
                     <label className='text-sm'>Email</label>
-                    <Input name="email" required onChange={handleInputChange}/>
+                    <Input name="email" required onChange={handleInputChange}
+                    defaultValue={cvInfo?.email}/>
                 </div>
             </div>
             <div className='mt-3 flex justify-end'>
