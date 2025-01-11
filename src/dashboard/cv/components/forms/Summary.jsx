@@ -8,7 +8,7 @@ function Summary() {
         <h2 className='font-bold text-lg'>Summary</h2>
         <p>Add Summary for your job title</p>
 
-        <div>
+        <div className="mt-7">
             <div className="flex justify-between">
                 <label>Add Summary</label>
                 <Button variant="outline"size="sm" className="border-primary text-primary">Generate from AI</Button>
