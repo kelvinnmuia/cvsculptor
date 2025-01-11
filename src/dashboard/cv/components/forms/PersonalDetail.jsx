@@ -60,7 +60,7 @@ function PersonalDetail({enabledNext}) {
             <div className='grid grid-cols-2 mt-5 gap-3'>
                 <div>
                     <label className='text-sm'>First Name</label>
-                    <Input name="firstName" required onChange={handleInputChange}/>
+                    <Input name="firstName" defaultValue={cvInfo?.firstName} required onChange={handleInputChange}/>
                 </div>
                 <div>
                     <label className='text-sm'>Last Name</label>

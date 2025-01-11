@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { ArrowLeft, ArrowRight, LayoutGrid } from 'lucide-react'
 
 function FormSection() {
-  const [activeFormIndex,setActiveFormIndex]=useState(2);
+  const [activeFormIndex,setActiveFormIndex]=useState(1);
   const [enableNext,setEnableNext]=useState(false);
   return (
     <div>
