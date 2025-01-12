@@ -76,6 +76,9 @@ function Summary({enabledNext}) {
             </div>
         </form>
       </div>
+      {aiGeneratedSummaryList&&<div>
+        <h2 className>Suggestions</h2>
+      </div>}
     </div>
   )
 }
