@@ -78,6 +78,11 @@ function Summary({enabledNext}) {
       </div>
       {aiGeneratedSummaryList&&<div>
         <h2 className='font-bold text-lg'>Suggestions</h2>
+        {aiGeneratedSummaryList.map((item,index)=>{
+            <div>
+                
+            </div>
+        })}
       </div>}
     </div>
   )
