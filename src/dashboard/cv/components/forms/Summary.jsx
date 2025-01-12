@@ -29,7 +29,7 @@ function Summary({enabledNext}) {
         console.log(PROMPT);
         const result=await AIChatSession.sendMessage(PROMPT);
         console.log(JSON.parse(result.response.text()));
-        setAiGeneratedSummaryList(JSON.parse(result.response.text()));
+        setAiGeneratedSummaryList(JSON.parse([result.response.text()]));
         setLoading(false);
     }
 
