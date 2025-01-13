@@ -8,7 +8,7 @@ import { LoaderCircle, Brain } from 'lucide-react';
 import { toast } from 'sonner';
 import { AIChatSession } from './../../../../../service/AIModel';
 
-const prompt="Job Title: {jobTitle}, Depends on job title give me summary for my cv within 4 - 5 lines in JSON format with field experience Level and Summary with Experience level for Fresher, Mid-Level, Experienced."
+const prompt="Job Title: {jobTitle}, Depends on job title give me summary for my cv within 4 - 5 lines in JSON format with field experienceLevel and Summary with Experience level for Fresher, Mid-Level, Experienced."
 function Summary({enabledNext}) {
     const {cvInfo,setCvInfo}=useContext(CvInfoContext);
     const [summary,setSummary]=useState();
