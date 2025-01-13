@@ -59,8 +59,9 @@ function Experience() {
                 </div>
             ))}
         </div>
-        <div>
-            <Button variant="outline"> + Add More Experience</Button>
+        <div className="flex justify-between">
+            <Button variant="outline" className="text-primary"> + Add More Experience</Button>
+            <Button>Save</Button>
         </div>
         </div>
     </div>
