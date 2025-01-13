@@ -23,6 +23,10 @@ function Experience() {
 
     }
 
+    const AddNewExperience=()=>{
+        setExperienceList([...experienceList,formField])
+    }
+
   return (
     <div>
         <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
@@ -65,7 +69,7 @@ function Experience() {
             ))}
         </div>
         <div className="flex justify-between">
-            <Button variant="outline" className="text-primary"> + Add More Experience</Button>
+            <Button variant="outline" onClick={AddNewExperience} className="text-primary"> + Add More Experience</Button>
             <Button>Save</Button>
         </div>
         </div>
