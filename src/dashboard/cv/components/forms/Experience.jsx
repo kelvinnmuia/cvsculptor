@@ -1,3 +1,4 @@
+import { Input } from '@/components/ui/input'
 import React, { useState } from 'react'
 
 const formField={
@@ -24,7 +25,10 @@ function Experience() {
             {experienceList.map((item,index)=>(
                 <div>
                     <div className='grid grid-cols-2'>
-
+                        <div>
+                            <label>Position Title</label>
+                            <Input />
+                        </div>
                     </div>
                 </div>
             ))}

@@ -3,6 +3,7 @@ import PersonalDetail from './forms/PersonalDetail'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, ArrowRight, LayoutGrid } from 'lucide-react'
 import Summary from './forms/Summary';
+import Experience from './forms/Experience';
 
 function FormSection() {
   const [activeFormIndex,setActiveFormIndex]=useState(1);
