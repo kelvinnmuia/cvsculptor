@@ -16,6 +16,11 @@ function Experience() {
             formField
         }
     ])
+
+    const handleChange=(index,event)=>{
+
+    }
+
   return (
     <div>
         <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
@@ -24,10 +29,10 @@ function Experience() {
         <div>
             {experienceList.map((item,index)=>(
                 <div>
-                    <div className='grid grid-cols-2'>
+                    <div className='grid grid-cols-2 gap-3 border p-3 my-5 rounded-lg'>
                         <div>
-                            <label>Position Title</label>
-                            <Input />
+                            <label className='text-xs'>Position Title</label>
+                            <Input name="title" onChane={(event)=>handleChane(event,index)} />
                         </div>
                     </div>
                 </div>
