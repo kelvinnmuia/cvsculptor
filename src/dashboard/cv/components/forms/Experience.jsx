@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import React, { useState } from 'react'
 
@@ -32,11 +33,34 @@ function Experience() {
                     <div className='grid grid-cols-2 gap-3 border p-3 my-5 rounded-lg'>
                         <div>
                             <label className='text-xs'>Position Title</label>
-                            <Input name="title" onChane={(event)=>handleChane(event,index)} />
+                            <Input name="title" onChange={(event)=>handleChange(event,index)} />
+                        </div>
+                        <div>
+                            <label className='text-xs'>Company Name</label>
+                            <Input name="companyName" onChange={(event)=>handleChange(event,index)} />
+                        </div>
+                        <div>
+                            <label className='text-xs'>City</label>
+                            <Input name="city" onChane={(event)=>handleChange(event,index)} />
+                        </div>
+                        <div>
+                            <label className='text-xs'>State</label>
+                            <Input name="state" onChange={(event)=>handleChange(event,index)} />
+                        </div>
+                        <div>
+                            <label className='text-xs'>Start Date</label>
+                            <Input type="date" name="startDate" onChange={(event)=>handleChange(event,index)} />
+                        </div>
+                        <div>
+                            <label className='text-xs'>End Date</label>
+                            <Input type="date" name="endDate" onChange={(event)=>handleChange(event,index)} />
                         </div>
                     </div>
                 </div>
             ))}
+        </div>
+        <div>
+            <Button> + Add More Experience</Button>
         </div>
         </div>
     </div>
