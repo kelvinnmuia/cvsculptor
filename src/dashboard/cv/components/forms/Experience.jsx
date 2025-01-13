@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import React, { useContext, useEffect, useState } from 'react'
 import RichTextEditor from '../RichTextEditor'
+import { CvInfoContext } from '@/context/CvInfoContext'
 
 const formField={
     title:'',
