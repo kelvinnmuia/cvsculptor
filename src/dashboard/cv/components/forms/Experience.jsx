@@ -56,8 +56,10 @@ function Experience() {
                             <label className='text-xs'>End Date</label>
                             <Input type="date" name="endDate" onChange={(event)=>handleChange(event,index)} />
                         </div>
+                        <div className='col-span-2'>
                         {/* Work Summary */}
                         <RichTextEditor />
+                        </div>
                     </div>
                 </div>
             ))}
