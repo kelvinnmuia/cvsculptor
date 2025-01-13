@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import React, { useState } from 'react'
+import RichTextEditor from '../RichTextEditor'
 
 const formField={
     title:'',
@@ -55,6 +56,8 @@ function Experience() {
                             <label className='text-xs'>End Date</label>
                             <Input type="date" name="endDate" onChange={(event)=>handleChange(event,index)} />
                         </div>
+                        {/* Work Summary */}
+                        <RichTextEditor />
                     </div>
                 </div>
             ))}
