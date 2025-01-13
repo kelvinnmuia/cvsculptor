@@ -60,7 +60,7 @@ function Experience() {
             ))}
         </div>
         <div>
-            <Button> + Add More Experience</Button>
+            <Button variant="outline"> + Add More Experience</Button>
         </div>
         </div>
     </div>
