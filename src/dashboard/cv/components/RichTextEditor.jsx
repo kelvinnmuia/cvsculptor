@@ -6,10 +6,10 @@ import { BtnBold, BtnBulletList, BtnItalic, BtnLink, BtnNumberedList, BtnRedo, B
 import { AIChatSession } from './../../../../service/AIModel';
 import { toast } from 'sonner';
 
-const PROMPT='position title: {positionTitle} , Depends on position title give me 5-7 bullet points for my experience in resume, give me result in HTML format'
-
+const PROMPT=`position title: {positionTitle}, Based on the position title, provide 5-7 bullet points for my experience in resume. 
+Return the response as a JSON array of strings`;
 function RichTextEditor({onRichTextEditorChange,index}) {
-    const [value,setValue] = useState('<ul><li>Developed and maintained a customer portal, resulting in a 15% increase in customer satisfaction. </li> </ul>');
+    const [value,setValue] = useState();
     const {cvInfo,setCvInfo}=useContext(CvInfoContext);
     const [loading,setLoading]=useState(false);
     const GenerateSummaryFromAI=async()=>{
@@ -23,7 +23,7 @@ function RichTextEditor({onRichTextEditorChange,index}) {
         const result=await AIChatSession.sendMessage(prompt);
         console.log(result.response.text());
         const resp=result.response.text()
-        setValue(resp.replace('[','').replace(']',''));
+        setValue(resp);
         setLoading(false);
     }
 
