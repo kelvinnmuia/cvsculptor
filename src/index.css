@@ -12,16 +12,6 @@
   padding-left: 2em;
 }
 
-.rich-text-editor ul {
-  padding-left: 20px;
-  list-style-type: disc;
-}
-
-.rich-text-editor li {
-  margin-bottom: 5px;
-  font-size: 14px;
-  line-height: 1.5;
-}
 
 /* ... */
 :root {
