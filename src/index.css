@@ -2,16 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.rich-text-editor ul {
-  padding-left: 20px;
-  list-style-type: disc;
+.rsw-ce ul {
+  list-style: disc;
+  padding-left: 2em;
 }
 
-.rich-text-editor li {
-  margin-bottom: 5px;
-  font-size: 14px;
-  line-height: 1.5;
+.rsw-ce ol {
+  list-style: decimal;
+  padding-left: 2em;
 }
+
 /* ... */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
