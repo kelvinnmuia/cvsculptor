@@ -57,7 +57,7 @@ function Experience() {
         <p>Add Your Previous Job(s) Experience</p>
         <div>
             {experienceList.map((item,index)=>(
-                <div>
+                <div key={index}>
                     <div className='grid grid-cols-2 gap-3 border p-3 my-5 rounded-lg'>
                         <div>
                             <label className='text-xs'>Position Title</label>
