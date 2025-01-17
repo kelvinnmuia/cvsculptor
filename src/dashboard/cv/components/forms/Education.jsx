@@ -6,81 +6,92 @@ import React, { useState } from 'react'
 
 function Education() {
 
-    const [educationalList,setEducationalList]=useState([
+    const [loading, setLoading] = useState(false);
+    const [educationalList, setEducationalList] = useState([
         {
-            universityName:'',
-            degree:'',
-            major:'',
-            startDate:'',
-            endDate:'',
-            description:''
+            universityName: '',
+            degree: '',
+            major: '',
+            startDate: '',
+            endDate: '',
+            description: ''
         }
     ])
 
-    const handleChange=(event,index)=>{
+    const handleChange = (event, index) => {
 
     }
 
-    const AddNewEducation=()=>{
+    const AddNewEducation = () => {
+        setEducationalList([...educationalList,
+        {
+            universityName: '',
+            degree: '',
+            major: '',
+            startDate: '',
+            endDate: '',
+            description: ''
+        }
+        ])
 
     }
 
-    const RemoveEducation=()=>{
+    const RemoveEducation = () => {
 
     }
 
-    const onSave=()=>{
+    const onSave = () => {
 
     }
 
-  return (
-    <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
-        <h2 className='font-bold text-lg'>Education</h2>
-        <p>Add Your educational details</p>
-        <div>
-            {educationalList.map((item,index)=>(
-                <div>
-                    <div className='grid grid-cols-2 gap-3 border p-3 my-5 rounded-lg'>
-                        <div>
-                            <label className='text-sm'>University Name</label>
-                            <Input name="universityName" onChange={(e)=>handleChange(e,index)}/>
-                        </div>
-                        <div>
-                            <label className='text-sm'>Degree</label>
-                            <Input name="degree" onChange={(e)=>handleChange(e,index)}/>
-                        </div>
-                        <div className='col-span-2'>
-                            <label className='text-sm'>Major</label>
-                            <Input name="major" onChange={(e)=>handleChange(e,index)}/>
-                        </div>
-                        <div>
-                            <label className='text-sm'>Start Date</label>
-                            <Input name="startDate" onChange={(e)=>handleChange(e,index)}/>
-                        </div>
-                        <div>
-                            <label className='text-sm'>End Date</label>
-                            <Input name="endDate" onChange={(e)=>handleChange(e,index)}/>
-                        </div>
-                        <div className='col-span-2'>
-                            <label className='text-sm'>Description</label>
-                            <Textarea name="description" onChange={(e)=>handleChange(e,index)}/>
+    return (
+        <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
+            <h2 className='font-bold text-lg'>Education</h2>
+            <p>Add Your educational details</p>
+            <div>
+                {educationalList.map((item, index) => (
+                    <div>
+                        <div className='grid grid-cols-2 gap-3 border p-3 my-5 rounded-lg'>
+                            <div>
+                                <label className='text-sm'>University Name</label>
+                                <Input name="universityName" onChange={(e) => handleChange(e, index)} />
+                            </div>
+                            <div>
+                                <label className='text-sm'>Degree</label>
+                                <Input name="degree" onChange={(e) => handleChange(e, index)} />
+                            </div>
+                            <div className='col-span-2'>
+                                <label className='text-sm'>Major</label>
+                                <Input name="major" onChange={(e) => handleChange(e, index)} />
+                            </div>
+                            <div>
+                                <label className='text-sm'>Start Date</label>
+                                <Input name="startDate" onChange={(e) => handleChange(e, index)} />
+                            </div>
+                            <div>
+                                <label className='text-sm'>End Date</label>
+                                <Input name="endDate" onChange={(e) => handleChange(e, index)} />
+                            </div>
+                            <div className='col-span-2'>
+                                <label className='text-sm'>Description</label>
+                                <Textarea name="description" onChange={(e) => handleChange(e, index)} />
+                            </div>
                         </div>
                         <div className="flex justify-between">
-                                    <div className='flex gap-2'>
-                                    <Button variant="outline" onClick={AddNewEducation} className="text-primary"> + Add More Experience</Button>
+                                <div className='flex gap-2'>
+                                    <Button variant="outline" onClick={AddNewEducation} className="text-primary"> + Add More Education</Button>
                                     <Button variant="outline" onClick={RemoveEducation} className="text-primary"> - Remove</Button>
-                                    </div>
-                                    {/*<Button disabled={loading} onClick={()=>onSave()}>
-                                        {loading?<LoaderCircle className='animate-spin' />:'Save'}
-                                    </Button>*/}
-                        </div>
+                                </div>
+                                <Button disabled={loading} onClick={() => onSave()}>
+                                    {loading ? <LoaderCircle className='animate-spin' /> : 'Save'}
+                                </Button>
+                            </div>
                     </div>
-                </div>
-            ))}
-        </div>
+                ))}
+            </div>
 
-    </div>
-  )
+        </div>
+    )
 }
 
 export default Education
