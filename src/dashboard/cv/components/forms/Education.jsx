@@ -1,12 +1,14 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { CvInfoContext } from '@/context/CvInfoContext'
 import { LoaderCircle } from 'lucide-react'
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 function Education() {
 
     const [loading, setLoading] = useState(false);
+    const {cvInfo,setCvInfo}=useContext(CvInfoContext);
     const [educationalList, setEducationalList] = useState([
         {
             universityName: '',
@@ -47,6 +49,13 @@ function Education() {
 
     }
 
+    useEffect(()=>{
+        setCvInfo({
+            ...cvInfo,
+            education:educationalList
+        })
+    },[educationalList])
+
     return (
         <div>
             <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
@@ -56,7 +65,7 @@ function Education() {
                     {educationalList.map((item, index) => (
                         <div>
                             <div className='grid grid-cols-2 gap-3 border p-3 my-5 rounded-lg'>
-                                <div>
+                                <div className='col-span-2'>
                                     <label className='text-sm'>University Name</label>
                                     <Input name="universityName" onChange={(e) => handleChange(e, index)} />
                                 </div>
@@ -64,17 +73,17 @@ function Education() {
                                     <label className='text-sm'>Degree</label>
                                     <Input name="degree" onChange={(e) => handleChange(e, index)} />
                                 </div>
-                                <div className='col-span-2'>
+                                <div>
                                     <label className='text-sm'>Major</label>
                                     <Input name="major" onChange={(e) => handleChange(e, index)} />
                                 </div>
                                 <div>
                                     <label className='text-sm'>Start Date</label>
-                                    <Input name="startDate" onChange={(e) => handleChange(e, index)} />
+                                    <Input type="date"name="startDate" onChange={(e) => handleChange(e, index)} />
                                 </div>
                                 <div>
                                     <label className='text-sm'>End Date</label>
-                                    <Input name="endDate" onChange={(e) => handleChange(e, index)} />
+                                    <Input type="date" name="endDate" onChange={(e) => handleChange(e, index)} />
                                 </div>
                                 <div className='col-span-2'>
                                     <label className='text-sm'>Description</label>
