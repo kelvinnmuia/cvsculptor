@@ -1,5 +1,7 @@
+import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { LoaderCircle } from 'lucide-react'
 import React, { useState } from 'react'
 
 function Education() {
@@ -18,6 +20,19 @@ function Education() {
     const handleChange=(event,index)=>{
 
     }
+
+    const AddNewEducation=()=>{
+
+    }
+
+    const RemoveEducation=()=>{
+
+    }
+
+    const onSave=()=>{
+
+    }
+
   return (
     <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
         <h2 className='font-bold text-lg'>Education</h2>
@@ -52,10 +67,12 @@ function Education() {
                         </div>
                         <div className="flex justify-between">
                                     <div className='flex gap-2'>
-                                    <Button variant="outline" onClick={AddNewExperience} className="text-primary"> + Add More Experience</Button>
-                                    <Button variant="outline" onClick={RemoveExperience} className="text-primary"> - Remove</Button>
+                                    <Button variant="outline" onClick={AddNewEducation} className="text-primary"> + Add More Experience</Button>
+                                    <Button variant="outline" onClick={RemoveEducation} className="text-primary"> - Remove</Button>
                                     </div>
-                                    <Button>Save</Button>
+                                    {/*<Button disabled={loading} onClick={()=>onSave()}>
+                                        {loading?<LoaderCircle className='animate-spin' />:'Save'}
+                                    </Button>*/}
                         </div>
                     </div>
                 </div>
