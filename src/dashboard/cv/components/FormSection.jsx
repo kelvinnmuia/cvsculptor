@@ -30,11 +30,11 @@ function FormSection() {
       :activeFormIndex==2? 
             <Summary enabledNext={(v)=>setEnableNext(v)} />
             :activeFormIndex==3?
+            {/* Experience */}
             <Experience/>
             :null
     }
 
-      {/* Experience */}
 
       {/* Educational Detail */}
 
