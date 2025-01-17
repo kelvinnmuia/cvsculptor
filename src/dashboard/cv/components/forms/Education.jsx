@@ -4,11 +4,14 @@ import { Textarea } from '@/components/ui/textarea'
 import { CvInfoContext } from '@/context/CvInfoContext'
 import { LoaderCircle } from 'lucide-react'
 import React, { useContext, useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+{/*import GlobalApi from 'service/GlobalApi'*/}
 
 function Education() {
 
     const [loading, setLoading] = useState(false);
     const {cvInfo,setCvInfo}=useContext(CvInfoContext);
+    const params=useParams();
     const [educationalList, setEducationalList] = useState([
         {
             universityName: '',
@@ -46,7 +49,15 @@ function Education() {
     }
 
     const onSave = () => {
+        const data={
+            data:{
+                education:educationalList
+            }
+        }
 
+        {/*GlobalApi.UpdateCvDetail(params?.cvId,data).then(resp=>{
+            console.log(resp);
+        })*/}
     }
 
     useEffect(()=>{
