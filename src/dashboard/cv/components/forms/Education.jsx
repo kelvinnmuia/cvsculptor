@@ -42,27 +42,27 @@ function Education() {
                 <div>
                     <div className='grid grid-cols-2 gap-3 border p-3 my-5 rounded-lg'>
                         <div>
-                            <label className='text-xs'>University Name</label>
+                            <label className='text-sm'>University Name</label>
                             <Input name="universityName" onChange={(e)=>handleChange(e,index)}/>
                         </div>
                         <div>
-                            <label className='text-xs'>Degree</label>
+                            <label className='text-sm'>Degree</label>
                             <Input name="degree" onChange={(e)=>handleChange(e,index)}/>
                         </div>
                         <div className='col-span-2'>
-                            <label className='text-xs'>Major</label>
+                            <label className='text-sm'>Major</label>
                             <Input name="major" onChange={(e)=>handleChange(e,index)}/>
                         </div>
                         <div>
-                            <label className='text-xs'>Start Date</label>
+                            <label className='text-sm'>Start Date</label>
                             <Input name="startDate" onChange={(e)=>handleChange(e,index)}/>
                         </div>
                         <div>
-                            <label className='text-xs'>End Date</label>
+                            <label className='text-sm'>End Date</label>
                             <Input name="endDate" onChange={(e)=>handleChange(e,index)}/>
                         </div>
                         <div className='col-span-2'>
-                            <label className='text-xs'>Description</label>
+                            <label className='text-sm'>Description</label>
                             <Textarea name="description" onChange={(e)=>handleChange(e,index)}/>
                         </div>
                         <div className="flex justify-between">
