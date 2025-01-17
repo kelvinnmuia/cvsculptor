@@ -19,7 +19,10 @@ function Education() {
     ])
 
     const handleChange = (event, index) => {
-
+        const newEntries = educationalList.slice();
+        const { name, value } = event.target;
+        newEntries[index][name] = value;
+        setEducationalList(newEntries);
     }
 
     const AddNewEducation = () => {
