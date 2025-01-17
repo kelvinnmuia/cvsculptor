@@ -36,6 +36,10 @@ function Education() {
                             <label>Major</label>
                             <Input name="major" onChange={(e)=>handleChange(e,index)}/>
                         </div>
+                        <div>
+                            <label>Start Date</label>
+                            <Input name="startDate" onChange={(e)=>handleChange(e,index)}/>
+                        </div>
                     </div>
                 </div>
             ))}
