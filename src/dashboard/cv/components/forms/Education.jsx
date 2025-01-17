@@ -25,7 +25,7 @@ function Education() {
         <div>
             {educationalList.map((item,index)=>(
                 <div>
-                    <div>
+                    <div className='grid grid-cols-2 gap-3 border p-3 my-5 rounded-lg'>
                         <div>
                             <label>University Name</label>
                             <Input name="universityName" onChange={(e)=>handleChange(e,index)}/>
@@ -34,7 +34,7 @@ function Education() {
                             <label>Degree</label>
                             <Input name="degree" onChange={(e)=>handleChange(e,index)}/>
                         </div>
-                        <div>
+                        <div className='col-span-2'>
                             <label>Major</label>
                             <Input name="major" onChange={(e)=>handleChange(e,index)}/>
                         </div>
@@ -46,14 +46,22 @@ function Education() {
                             <label>End Date</label>
                             <Input name="endDate" onChange={(e)=>handleChange(e,index)}/>
                         </div>
-                        <div>
+                        <div className='col-span-2'>
                             <label>Description</label>
                             <Textarea name="description" onChange={(e)=>handleChange(e,index)}/>
+                        </div>
+                        <div className="flex justify-between">
+                                    <div className='flex gap-2'>
+                                    <Button variant="outline" onClick={AddNewExperience} className="text-primary"> + Add More Experience</Button>
+                                    <Button variant="outline" onClick={RemoveExperience} className="text-primary"> - Remove</Button>
+                                    </div>
+                                    <Button>Save</Button>
                         </div>
                     </div>
                 </div>
             ))}
         </div>
+
     </div>
   )
 }
