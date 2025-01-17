@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { ArrowLeft, ArrowRight, LayoutGrid } from 'lucide-react'
 import Summary from './forms/Summary';
 import Experience from './forms/Experience';
+import Education from './forms/Education';
 
 function FormSection() {
   const [activeFormIndex,setActiveFormIndex]=useState(1);
@@ -31,7 +32,7 @@ function FormSection() {
             <Summary enabledNext={(v)=>setEnableNext(v)} />
             :activeFormIndex==3?
             <Experience/>
-            :nullactiveFormIndex==4?
+            :activeFormIndex==4?
             <Education />
             :null
     }
