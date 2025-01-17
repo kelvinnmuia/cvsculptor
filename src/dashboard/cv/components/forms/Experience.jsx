@@ -19,7 +19,7 @@ function Experience() {
             formField
         }
     ]);
-    
+
     const [loading,setLoading]=useState(false);
     const { cvInfo, setCvInfo } = useContext(CvInfoContext);
 
@@ -61,27 +61,27 @@ function Experience() {
                         <div key={index}>
                             <div className='grid grid-cols-2 gap-3 border p-3 my-5 rounded-lg'>
                                 <div>
-                                    <label className='text-xs'>Position Title</label>
+                                    <label className='text-sm'>Position Title</label>
                                     <Input name="title" onChange={(event) => handleChange(index, event)} />
                                 </div>
                                 <div>
-                                    <label className='text-xs'>Company Name</label>
+                                    <label className='text-sm'>Company Name</label>
                                     <Input name="companyName" onChange={(event) => handleChange(index, event)} />
                                 </div>
                                 <div>
-                                    <label className='text-xs'>City</label>
+                                    <label className='text-sm'>City</label>
                                     <Input name="city" onChange={(event) => handleChange(index, event)} />
                                 </div>
                                 <div>
-                                    <label className='text-xs'>State</label>
+                                    <label className='text-sm'>State</label>
                                     <Input name="state" onChange={(event) => handleChange(index, event)} />
                                 </div>
                                 <div>
-                                    <label className='text-xs'>Start Date</label>
+                                    <label className='text-sm'>Start Date</label>
                                     <Input type="date" name="startDate" onChange={(event) => handleChange(index, event)} />
                                 </div>
                                 <div>
-                                    <label className='text-xs'>End Date</label>
+                                    <label className='text-sm'>End Date</label>
                                     <Input type="date" name="endDate" onChange={(event) => handleChange(index, event)} />
                                 </div>
                                 <div className='col-span-2'>
