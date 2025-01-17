@@ -12,6 +12,10 @@ function Education() {
             description:''
         }
     ])
+
+    const handleChange=(event,index)=>{
+
+    }
   return (
     <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
         <h2 className='font-bold text-lg'>Education</h2>
@@ -22,7 +26,11 @@ function Education() {
                     <div>
                         <div>
                             <label>University Name</label>
-                            <Input name="universityName" onChange={()=>handleChange(e,index)}/>
+                            <Input name="universityName" onChange={(e)=>handleChange(e,index)}/>
+                        </div>
+                        <div>
+                            <label>Degree</label>
+                            <Input name="degree" onChange={(e)=>handleChange(e,index)}/>
                         </div>
                     </div>
                 </div>
