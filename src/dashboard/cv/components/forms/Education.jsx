@@ -22,7 +22,7 @@ function Education() {
                     <div>
                         <div>
                             <label>University Name</label>
-                            <Input name="universityName" onChange={()=>handleChange(e)}/>
+                            <Input name="universityName" onChange={()=>handleChange(e,index)}/>
                         </div>
                     </div>
                 </div>
