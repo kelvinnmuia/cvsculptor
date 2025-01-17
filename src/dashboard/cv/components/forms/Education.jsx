@@ -40,6 +40,14 @@ function Education() {
                             <label>Start Date</label>
                             <Input name="startDate" onChange={(e)=>handleChange(e,index)}/>
                         </div>
+                        <div>
+                            <label>End Date</label>
+                            <Input name="endDate" onChange={(e)=>handleChange(e,index)}/>
+                        </div>
+                        <div>
+                            <label>Description</label>
+                            <Textarea name="description" onChange={(e)=>handleChange(e,index)}/>
+                        </div>
                     </div>
                 </div>
             ))}
