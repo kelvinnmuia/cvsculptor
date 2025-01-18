@@ -5,6 +5,7 @@ import { CvInfoContext } from '@/context/CvInfoContext'
 import { LoaderCircle } from 'lucide-react'
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { toast } from 'sonner'
 {/*import GlobalApi from 'service/GlobalApi'*/}
 
 function Education() {
@@ -49,15 +50,21 @@ function Education() {
     }
 
     const onSave = () => {
+        setLoading(true);
         const data={
             data:{
                 education:educationalList
             }
         }
 
-        {/*GlobalApi.UpdateCvDetail(params?.cvId,data).then(resp=>{
+        GlobalApi.UpdateCvDetail(params?.cvId,data).then(resp=>{
             console.log(resp);
-        })*/}
+            setLoading(false);
+            toast("Details updated successfully");
+        },(error)=>{
+            setLoading(false);
+            toast("Server Error, Please try again later");
+        })
     }
 
     useEffect(()=>{
