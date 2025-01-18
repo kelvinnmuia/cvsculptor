@@ -14,7 +14,11 @@ function Skills() {
 
             <div>
                 {skillsList.map((item,index)=>(
-                    
+                    <div>
+                        <div>
+                            <label className='text-sm'>Name</label>
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>
