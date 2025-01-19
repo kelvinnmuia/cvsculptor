@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { CvInfoContext } from '@/context/CvInfoContext'
 import GlobalApi from './../../../../../service/GlobalApi'
 import { toast } from 'sonner'
+import { useParams } from 'react-router-dom'
 
 function Skills() {
     const [skillsList, setSkillsList] = useState([{
@@ -14,6 +15,7 @@ function Skills() {
         rating: 0
     }])
 
+    const {cvId}=useParams();
     const [loading,setLoading]=useState(false);
     const {cvInfo,setCvInfo}=useContext(CvInfoContext);
     const handleChange = (index,name,value) => {
@@ -41,7 +43,7 @@ function Skills() {
             }
         }
 
-        GlobalApi.UpdateCvDetail(CvCardItem,data)
+        GlobalApi.UpdateCvDetail(cvId,data)
         .then(resp=>{
             console.log(resp);
             setLoading(false);
