@@ -1,5 +1,5 @@
 import { Input } from '@/components/ui/input'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { LoaderCircle } from 'lucide-react'
@@ -12,6 +12,7 @@ function Skills() {
     }])
 
     const [loading,setLoading]=useState(false);
+    const {cvInfo,setCvInfo}=useContext(CvInfoContext);
     const handleChange = (index, name, value) => {
         const newEntries = skillsList.slice();
         newEntries[index][name] = value;
@@ -32,6 +33,10 @@ function Skills() {
     const onSave=()=>{
 
     }
+
+    useEffect(()=>{
+        
+    },[])
 
     return (
         <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
