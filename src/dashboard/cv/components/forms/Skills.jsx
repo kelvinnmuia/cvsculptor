@@ -35,7 +35,10 @@ function Skills() {
     }
 
     useEffect(()=>{
-        
+        setCvInfo({
+            ...cvInfo,
+            skills:skillsList
+        })
     },[])
 
     return (
