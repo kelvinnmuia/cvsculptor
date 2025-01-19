@@ -38,7 +38,7 @@ function Skills() {
 
             <div>
                 {skillsList.map((item, index) => (
-                    <div className='flex justify-between border rounded-lg p-3'>
+                    <div className='flex justify-between mb-2 border rounded-lg p-3'>
                         <div>
                             <label className='text-sm'>Name</label>
                             <Input className="w-full" onChange={(e) => handleChange(e, 'name', e.target.value)} />
