@@ -32,7 +32,11 @@ function Skills() {
     }
 
     const onSave=()=>{
-
+        const data={
+            data:{
+                skills:skillsList
+            }
+        }
     }
 
     useEffect(()=>{

@@ -20,7 +20,7 @@ function SkillsPreview({cvInfo}) {
                     <div className='h-2'
                     style={{
                         backgroundColor:cvInfo?.themeColor,
-                        width:skill?.rating+'%'
+                        width:skill?.rating*20+'%'
                     }}
                     >
 
