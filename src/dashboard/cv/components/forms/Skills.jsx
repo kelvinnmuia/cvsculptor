@@ -13,10 +13,9 @@ function Skills() {
 
     const [loading,setLoading]=useState(false);
     const handleChange = (index, name, value) => {
-        const newEntries = experienceList.slice();
-        const { name, value } = event.target;
+        const newEntries = skillsList.slice();
         newEntries[index][name] = value;
-        setExperienceList(newEntries);
+        setSkillsList(newEntries);
     }
 
     const AddNewSkills=()=>{
