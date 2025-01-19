@@ -24,7 +24,7 @@ function Skills() {
     }
 
     const RemoveSkills=()=>{
-
+        setSkillsList(skillsList=>skillsList.slice(0,-1))
     }
 
     const onSave=()=>{
