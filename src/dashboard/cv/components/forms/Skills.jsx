@@ -5,6 +5,8 @@ import '@smastrom/react-rating/style.css'
 import { LoaderCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { CvInfoContext } from '@/context/CvInfoContext'
+import GlobalApi from 'service/GlobalApi'
+import { toast } from 'sonner'
 
 function Skills() {
     const [skillsList, setSkillsList] = useState([{
@@ -32,11 +34,22 @@ function Skills() {
     }
 
     const onSave=()=>{
+        setLoading(true)
         const data={
             data:{
                 skills:skillsList
             }
         }
+
+        GlobalApi.UpdateCvDetail(CvCardItem,data)
+        .then(resp=>{
+            console.log(resp);
+            setLoading(false);
+            toast('Details updated successfully')
+        },(error)=>{
+            setLoading(false);
+            toast('Server Error, Try again!')
+        })
     }
 
     useEffect(()=>{
