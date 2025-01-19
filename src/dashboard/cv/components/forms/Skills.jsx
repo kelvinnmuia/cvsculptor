@@ -2,6 +2,8 @@ import { Input } from '@/components/ui/input'
 import React, { useState } from 'react'
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import { LoaderCircle } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 function Skills() {
     const [skillsList, setSkillsList] = useState([{
@@ -9,9 +11,12 @@ function Skills() {
         rating: 0
     }])
 
+    const [loading,setLoading]=useState(false);
     const handleChange = (index, name, value) => {
 
     }
+
+    
 
     return (
         <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
