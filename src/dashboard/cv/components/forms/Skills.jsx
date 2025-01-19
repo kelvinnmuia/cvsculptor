@@ -23,7 +23,7 @@ function Skills() {
                     <div className='flex justify-between'>
                         <div>
                             <label className='text-sm'>Name</label>
-                            <Input onChange={(e)=>handleChange(e,'name',e.target.value)} />
+                            <Input className="w-full" onChange={(e)=>handleChange(e,'name',e.target.value)} />
                         </div>
                         <Rating style={{ maxWidth: 120 }} value={item.rating} onChange={(v)=>handleChange(index,'rating',v)} />
                     </div>
