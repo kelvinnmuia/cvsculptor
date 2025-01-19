@@ -16,7 +16,20 @@ function Skills() {
 
     }
 
-    
+    const AddNewSkills=()=>{
+        setSkillsList([...skillsList,{
+            name:'',
+            rating:0
+        }])
+    }
+
+    const RemoveSkills=()=>{
+
+    }
+
+    const onSave=()=>{
+
+    }
 
     return (
         <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
