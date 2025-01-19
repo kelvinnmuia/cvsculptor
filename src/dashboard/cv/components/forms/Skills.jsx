@@ -1,5 +1,7 @@
 import { Input } from '@/components/ui/input'
 import React, { useState } from 'react'
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 function Skills() {
     const [skillsList,setSkillsList]=useState([{
@@ -8,7 +10,7 @@ function Skills() {
         }])
 
     const handleChange=(index,name,value)=>{
-        
+
     }
 
     return (
