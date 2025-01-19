@@ -1,3 +1,4 @@
+import { Input } from '@/components/ui/input'
 import React, { useState } from 'react'
 
 function Skills() {
@@ -17,6 +18,7 @@ function Skills() {
                     <div>
                         <div>
                             <label className='text-sm'>Name</label>
+                            <Input />
                         </div>
                     </div>
                 ))}
