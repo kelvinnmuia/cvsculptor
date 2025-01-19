@@ -1,9 +1,10 @@
 import { Input } from '@/components/ui/input'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { LoaderCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { CvInfoContext } from '@/context/CvInfoContext'
 
 function Skills() {
     const [skillsList, setSkillsList] = useState([{
@@ -13,7 +14,7 @@ function Skills() {
 
     const [loading,setLoading]=useState(false);
     const {cvInfo,setCvInfo}=useContext(CvInfoContext);
-    const handleChange = (index, name, value) => {
+    const handleChange = (index,name,value) => {
         const newEntries = skillsList.slice();
         newEntries[index][name] = value;
         setSkillsList(newEntries);
@@ -39,7 +40,7 @@ function Skills() {
             ...cvInfo,
             skills:skillsList
         })
-    },[])
+    },[skillsList])
 
     return (
         <div className='p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10'>
@@ -51,7 +52,7 @@ function Skills() {
                     <div className='flex justify-between mb-2 border rounded-lg p-3'>
                         <div>
                             <label className='text-sm'>Name</label>
-                            <Input className="w-full" onChange={(e) => handleChange(e, 'name', e.target.value)} />
+                            <Input className="w-full" onChange={(e) => handleChange(index, 'name', e.target.value)} />
                         </div>
                         <Rating style={{ maxWidth: 120 }} value={item.rating} onChange={(v) => handleChange(index, 'rating', v)} />
                     </div>
