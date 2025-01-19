@@ -18,7 +18,7 @@ function Skills() {
                     <div>
                         <div>
                             <label className='text-sm'>Name</label>
-                            <Input />
+                            <Input onChange={(e)=>handleChange(e,'name',e.target.value)} />
                         </div>
                     </div>
                 ))}
