@@ -5,7 +5,7 @@ import '@smastrom/react-rating/style.css'
 import { LoaderCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { CvInfoContext } from '@/context/CvInfoContext'
-import GlobalApi from 'service/GlobalApi'
+import GlobalApi from './../../../../../service/GlobalApi'
 import { toast } from 'sonner'
 
 function Skills() {
