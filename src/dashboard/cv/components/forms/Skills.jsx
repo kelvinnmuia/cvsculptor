@@ -4,12 +4,12 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 
 function Skills() {
-    const [skillsList,setSkillsList]=useState([{
-            name:'',
-            rating:0
-        }])
+    const [skillsList, setSkillsList] = useState([{
+        name: '',
+        rating: 0
+    }])
 
-    const handleChange=(index,name,value)=>{
+    const handleChange = (index, name, value) => {
 
     }
 
@@ -19,15 +19,24 @@ function Skills() {
             <p>Add Your top professional key skills</p>
 
             <div>
-                {skillsList.map((item,index)=>(
-                    <div className='flex justify-between'>
+                {skillsList.map((item, index) => (
+                    <div className='flex justify-between border rounded-lg p-3'>
                         <div>
                             <label className='text-sm'>Name</label>
-                            <Input className="w-full" onChange={(e)=>handleChange(e,'name',e.target.value)} />
+                            <Input className="w-full" onChange={(e) => handleChange(e, 'name', e.target.value)} />
                         </div>
-                        <Rating style={{ maxWidth: 120 }} value={item.rating} onChange={(v)=>handleChange(index,'rating',v)} />
+                        <Rating style={{ maxWidth: 120 }} value={item.rating} onChange={(v) => handleChange(index, 'rating', v)} />
                     </div>
                 ))}
+            </div>
+            <div className="flex justify-between">
+                <div className='flex gap-2'>
+                    <Button variant="outline" onClick={AddNewSkills} className="text-primary"> + Add More Skill</Button>
+                    <Button variant="outline" onClick={RemoveSkills} className="text-primary"> - Remove</Button>
+                </div>
+                <Button disabled={loading} onClick={() => onSave()}>
+                    {loading ? <LoaderCircle className='animate-spin' /> : 'Save'}
+                </Button>
             </div>
         </div>
     )
