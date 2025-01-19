@@ -20,12 +20,12 @@ function Skills() {
 
             <div>
                 {skillsList.map((item,index)=>(
-                    <div>
+                    <div className='flex justify-between'>
                         <div>
                             <label className='text-sm'>Name</label>
                             <Input onChange={(e)=>handleChange(e,'name',e.target.value)} />
                         </div>
-                        <Rating style={{ maxWidth: 250 }} value={item.rating} onChange={(v)=>handleChange(index,'rating',v)} />
+                        <Rating style={{ maxWidth: 120 }} value={item.rating} onChange={(v)=>handleChange(index,'rating',v)} />
                     </div>
                 ))}
             </div>
