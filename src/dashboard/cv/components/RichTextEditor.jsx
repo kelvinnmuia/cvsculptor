@@ -23,7 +23,7 @@ function RichTextEditor({onRichTextEditorChange,index}) {
         const result=await AIChatSession.sendMessage(prompt);
         console.log(result.response.text());
         const resp=result.response.text()
-        setValue(resp);
+        setValue(resp.replace('[',''));
         setLoading(false);
     }
 
