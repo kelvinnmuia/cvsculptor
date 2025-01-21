@@ -15,7 +15,7 @@ function CvCardItem({cv}) {
   return (
     <Link to={'/dashboard/cv/'+cv.documentId+"/edit"}>
       <div className='p-14 bg-gradient-to-b 
-      from-pink-100 via-white-200 to-grey-200 
+      from-pink-100 via-white-200 to-blue-200 
       flex
       items-center justify-center h-[280px] 
       border border-primary rounded-lg
