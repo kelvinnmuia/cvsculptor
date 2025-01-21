@@ -9,7 +9,7 @@ import { toast } from 'sonner';
 const PROMPT=`position title: {positionTitle}, Based on the position title, provide 5-7 bullet points for my experience in resume. 
 Return the response as a JSON array of strings`;
 function RichTextEditor({onRichTextEditorChange,index}) {
-    const [value,setValue] = useState('<ul><li>Developed and maintained a customer portal, resulting in a 15% increase in customer satisfaction.</li> <li>Implemented responsive and user-friendly front-end interfaces using HTML, CSS, and JavaScript, enhancing the user experience </li> </ul>');
+    const [value,setValue] = useState('');
     const {cvInfo,setCvInfo}=useContext(CvInfoContext);
     const [loading,setLoading]=useState(false);
     const GenerateSummaryFromAI=async()=>{
@@ -23,7 +23,7 @@ function RichTextEditor({onRichTextEditorChange,index}) {
         const result=await AIChatSession.sendMessage(prompt);
         console.log(result.response.text());
         const resp=result.response.text()
-        setValue(resp.replace('[',''));
+        setValue(resp.replace('[','').replace(']',''));
         setLoading(false);
     }
 

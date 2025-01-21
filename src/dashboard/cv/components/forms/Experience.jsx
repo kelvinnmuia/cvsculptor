@@ -3,6 +3,7 @@ import { Input } from '@/components/ui/input'
 import React, { useContext, useEffect, useState } from 'react'
 import RichTextEditor from '../RichTextEditor'
 import { CvInfoContext } from '@/context/CvInfoContext'
+import { useParams } from 'react-router-dom'
 
 const formField = {
     title: '',
@@ -22,6 +23,7 @@ function Experience() {
 
     const [loading,setLoading]=useState(false);
     const { cvInfo, setCvInfo } = useContext(CvInfoContext);
+    const params=useParams();
 
     const handleChange = (index, event) => {
         const newEntries = experienceList.slice();
@@ -38,6 +40,24 @@ function Experience() {
         setExperienceList(experienceList => experienceList.slice(0, -1))
     }
 
+    const onSave = () => {
+        setLoading(true);
+        const data={
+            data:{
+                experience:experienceList
+            }
+        }
+
+        GlobalApi.UpdateCvDetail(params?.cvId,data).then(resp=>{
+            console.log(resp);
+            setLoading(false);
+            toast("Details updated successfully");
+        },(error)=>{
+            setLoading(false);
+            toast("Server Error, Please try again later");
+        })
+    }
+
     const handleRichTextEditor = (e, name, index) => {
         const newEntries = experienceList.slice();
         newEntries[index][name] = e.target.value;
@@ -47,7 +67,7 @@ function Experience() {
     useEffect(() => {
         setCvInfo({
             ...cvInfo,
-            experience: experienceList
+            experience:experienceList
         })
     }, [experienceList])
 
