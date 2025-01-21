@@ -20,7 +20,7 @@ function CvCardItem({cv}) {
       items-center justify-center h-[280px] 
       border border-primary rounded-lg
       hover:scale-105 transition-all hover:shadow-md shadow-primary'>
-        <img src="./notebook.png" width={80} height={80} />
+        <img src="./cv.png" width={80} height={80} />
       </div>
       <h2 className='text-center my-1'>{cv.title}</h2>
     </Link>
