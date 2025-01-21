@@ -6,6 +6,7 @@ import { CvInfoContext } from '@/context/CvInfoContext'
 import { useParams } from 'react-router-dom'
 import { LoaderCircle } from 'lucide-react'
 import GlobalApi from './../../../../../service/GlobalApi'
+import { toast } from 'sonner'
 
 const formField = {
     title: '',
