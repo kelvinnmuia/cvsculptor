@@ -5,6 +5,7 @@ import RichTextEditor from '../RichTextEditor'
 import { CvInfoContext } from '@/context/CvInfoContext'
 import { useParams } from 'react-router-dom'
 import { LoaderCircle } from 'lucide-react'
+import GlobalApi from './../../../../../service/GlobalApi'
 
 const formField = {
     title: '',
