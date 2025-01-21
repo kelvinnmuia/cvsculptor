@@ -17,7 +17,7 @@ function CvCardItem({cv}) {
       from-pink-100 via-grey-200 to-blue-200 
       flex
       items-center justify-center h-[280px] 
-      border border-primary rounded-lg
+      border-t-4 border-primary rounded-lg
       hover:scale-105 transition-all hover:shadow-md shadow-primary'>
         <img src="./cv.png" width={80} height={80} />
       </div>
