@@ -11,6 +11,11 @@ function EditCv() {
     useEffect(()=>{
         setCvInfo(dummy);
     },[])
+
+    const GetCvInfo=()=>{
+      
+    }
+
   return (
     <CvInfoContext.Provider value={{cvInfo,setCvInfo}}>
     <div className='grid grid-cols-1 md:grid-cols-2 p-10 gap-10'>
