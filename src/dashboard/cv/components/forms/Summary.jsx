@@ -67,6 +67,7 @@ function Summary({enabledNext}) {
             </div>
             <Textarea className="mt-5" required
             onChange={(e)=>setSummary(e.target.value)}
+            defaultValue={cvInfo?.summary}
             />
             <div className='mt-2 flex justify-end'>
             <Button type="submit"

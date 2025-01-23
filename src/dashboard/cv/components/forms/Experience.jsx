@@ -85,7 +85,8 @@ function Experience() {
                             <div className='grid grid-cols-2 gap-3 border p-3 my-5 rounded-lg'>
                                 <div>
                                     <label className='text-sm'>Position Title</label>
-                                    <Input name="title" onChange={(event) => handleChange(index, event)} />
+                                    <Input name="title" onChange={(event) => handleChange(index, event)} 
+                                    defaultValue={cvInfo?.title}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>Company Name</label>

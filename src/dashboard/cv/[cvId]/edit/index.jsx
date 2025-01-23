@@ -8,9 +8,8 @@ import GlobalApi from './../../../../../service/GlobalApi';
 
 function EditCv() {
     const {cvId}=useParams();
-    const [cvInfo,setCvInfo]=useState(dummy);
+    const [cvInfo,setCvInfo]=useState();
     useEffect(()=>{
-      setCvInfo
       GetCvInfo();
     },[])
 
