@@ -8,8 +8,8 @@ import { toast } from 'sonner';
 
 const PROMPT=`position title: {positionTitle}, Based on the position title, provide 5-7 bullet points for my experience in resume. 
 Return the response as a JSON array of strings`;
-function RichTextEditor({onRichTextEditorChange,index}) {
-    const [value,setValue] = useState('');
+function RichTextEditor({onRichTextEditorChange,index,defaultValue}) {
+    const [value,setValue] = useState(defaultValue);
     const {cvInfo,setCvInfo}=useContext(CvInfoContext);
     const [loading,setLoading]=useState(false);
     const GenerateSummaryFromAI=async()=>{
