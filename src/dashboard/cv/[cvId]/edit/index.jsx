@@ -4,7 +4,7 @@ import { CvInfoContext } from '@/context/CvInfoContext';
 import dummy from '@/datar/dummy';
 import FormSection from '../../components/FormSection';
 import CvPreview from '../../components/CvPreview';
-import GlobalApi from 'service/GlobalApi';
+import GlobalApi from './../../../../../service/GlobalApi';
 
 function EditCv() {
     const {cvId}=useParams();
