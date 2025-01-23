@@ -86,11 +86,12 @@ function Experience() {
                                 <div>
                                     <label className='text-sm'>Position Title</label>
                                     <Input name="title" onChange={(event) => handleChange(index, event)} 
-                                    defaultValue={cvInfo?.title}/>
+                                    defaultValue={item.title}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>Company Name</label>
-                                    <Input name="companyName" onChange={(event) => handleChange(index, event)} />
+                                    <Input name="companyName" onChange={(event) => handleChange(index, event)} 
+                                    defaultValue={item.companyName}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>City</label>
