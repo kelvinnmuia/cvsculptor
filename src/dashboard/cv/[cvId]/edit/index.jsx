@@ -17,6 +17,7 @@ function EditCv() {
     const GetCvInfo=()=>{
       GlobalApi.GetCvById().then(resp=>{
         console.log(resp.data.data)
+        setCvInfo(resp.data.data)
       })
     }
 

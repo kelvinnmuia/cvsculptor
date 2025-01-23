@@ -12,7 +12,7 @@ function ExperiencePreview({cvInfo}) {
         borderColor:cvInfo?.themeColor
       }} />
 
-      {cvInfo?.experience.map((experience,index)=>(
+      {cvInfo?.Experience?.map((experience,index)=>(
         <div key={index} className='my-5'>
           <h2 className='text-sm font-bold'
           style={{
