@@ -10,8 +10,8 @@ function EditCv() {
     const {cvId}=useParams();
     const [cvInfo,setCvInfo]=useState(dummy);
     useEffect(()=>{
-        setCvInfo(dummy);
-        GetCvInfo();
+      setCvInfo
+      GetCvInfo();
     },[])
 
     const GetCvInfo=()=>{
