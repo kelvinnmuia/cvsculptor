@@ -4,16 +4,20 @@ import { CvInfoContext } from '@/context/CvInfoContext';
 import dummy from '@/datar/dummy';
 import FormSection from '../../components/FormSection';
 import CvPreview from '../../components/CvPreview';
+import GlobalApi from 'service/GlobalApi';
 
 function EditCv() {
-    const params=useParams();
+    const {cvId}=useParams();
     const [cvInfo,setCvInfo]=useState(dummy);
     useEffect(()=>{
         setCvInfo(dummy);
+        GetCvInfo();
     },[])
 
     const GetCvInfo=()=>{
-      
+      GlobalApi.GetCvById().then(resp=>{
+        console.log(resp.data.data)
+      })
     }
 
   return (
