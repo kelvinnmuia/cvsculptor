@@ -85,7 +85,8 @@ function Education() {
                             <div className='grid grid-cols-2 gap-3 border p-3 my-5 rounded-lg'>
                                 <div className='col-span-2'>
                                     <label className='text-sm'>University Name</label>
-                                    <Input name="universityName" onChange={(e) => handleChange(e, index)} />
+                                    <Input name="universityName" onChange={(e) => handleChange(e, index)} 
+                                    defaultValue={item.universityName}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>Degree</label>
