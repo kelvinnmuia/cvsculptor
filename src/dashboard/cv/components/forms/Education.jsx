@@ -86,27 +86,32 @@ function Education() {
                                 <div className='col-span-2'>
                                     <label className='text-sm'>University Name</label>
                                     <Input name="universityName" onChange={(e) => handleChange(e, index)} 
-                                    defaultValue={item.universityName}/>
+                                    defaultValue={cvInfo?.education[index]?.universityName}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>Degree</label>
-                                    <Input name="degree" onChange={(e) => handleChange(e, index)} />
+                                    <Input name="degree" onChange={(e) => handleChange(e, index)} 
+                                    defaultValue={cvInfo?.education[index]?.degree}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>Major</label>
-                                    <Input name="major" onChange={(e) => handleChange(e, index)} />
+                                    <Input name="major" onChange={(e) => handleChange(e, index)} 
+                                    defaultValue={cvInfo?.education[index]?.major}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>Start Date</label>
-                                    <Input type="date"name="startDate" onChange={(e) => handleChange(e, index)} />
+                                    <Input type="date"name="startDate" onChange={(e) => handleChange(e, index)} 
+                                    defaultValue={cvInfo?.education[index]?.startDate}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>End Date</label>
-                                    <Input type="date" name="endDate" onChange={(e) => handleChange(e, index)} />
+                                    <Input type="date" name="endDate" onChange={(e) => handleChange(e, index)} 
+                                    defaultValue={cvInfo?.education[index]?.endDate}/>
                                 </div>
                                 <div className='col-span-2'>
                                     <label className='text-sm'>Description</label>
-                                    <Textarea name="description" onChange={(e) => handleChange(e, index)} />
+                                    <Textarea name="description" onChange={(e) => handleChange(e, index)} 
+                                    defaultValue={cvInfo?.education[index]?.description}/>
                                 </div>
                             </div>
                         </div>

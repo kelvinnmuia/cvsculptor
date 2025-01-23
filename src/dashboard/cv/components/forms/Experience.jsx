@@ -28,6 +28,9 @@ function Experience() {
     const { cvInfo, setCvInfo } = useContext(CvInfoContext);
     const params=useParams();
 
+    useEffect(() => {
+        cvInfo&&setExperienceList(cvInfo?.experience)
+    }, [cvInfo])
     const handleChange = (index, event) => {
         const newEntries = experienceList.slice();
         const { name, value } = event.target;
@@ -86,37 +89,38 @@ function Experience() {
                                 <div>
                                     <label className='text-sm'>Position Title</label>
                                     <Input name="title" onChange={(event) => handleChange(index, event)} 
-                                    defaultValue={item.title}/>
+                                    defaultValue={item?.title}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>Company Name</label>
                                     <Input name="companyName" onChange={(event) => handleChange(index, event)} 
-                                    defaultValue={item.companyName}/>
+                                    defaultValue={item?.companyName}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>City</label>
                                     <Input name="city" onChange={(event) => handleChange(index, event)} 
-                                    defaultValue={item.city}/>
+                                    defaultValue={item?.city}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>State</label>
                                     <Input name="state" onChange={(event) => handleChange(index, event)} 
-                                    defaultValue={item.state}/>
+                                    defaultValue={item?.state}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>Start Date</label>
                                     <Input type="date" name="startDate" onChange={(event) => handleChange(index, event)} 
-                                    defaultValue={item.startDate}/>
+                                    defaultValue={item?.startDate}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>End Date</label>
                                     <Input type="date" name="endDate" onChange={(event) => handleChange(index, event)} 
-                                    defaultValue={item.endDate}/>
+                                    defaultValue={item?.endDate}/>
                                 </div>
                                 <div className='col-span-2'>
                                     {/* Work Summary */}
                                     <RichTextEditor
                                         index={index}
+                                        defaultValue={item?.workSummary}
                                         onRichTextEditorChange={(event) => handleRichTextEditor(event, 'workSummary', index)} />
                                 </div>
                             </div>
