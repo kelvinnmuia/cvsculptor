@@ -15,7 +15,7 @@ const GetUserCvs=(userEmail)=>axiosClient.get('/user-cvs?filters[userEmail][$eq]
 
 const UpdateCvDetail=(id,data)=>axiosClient.put('/user-cvs/'+id,data)
 
-const GetCvById=(id)=>axiosClient.get('/user-cvs/'+id)
+const GetCvById=(id)=>axiosClient.get('/user-cvs/'+id+"?populate=*")
 
 export default{
     CreateNewCv,
