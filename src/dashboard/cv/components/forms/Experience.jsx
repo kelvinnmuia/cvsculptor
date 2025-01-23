@@ -95,19 +95,23 @@ function Experience() {
                                 </div>
                                 <div>
                                     <label className='text-sm'>City</label>
-                                    <Input name="city" onChange={(event) => handleChange(index, event)} />
+                                    <Input name="city" onChange={(event) => handleChange(index, event)} 
+                                    defaultValue={item.city}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>State</label>
-                                    <Input name="state" onChange={(event) => handleChange(index, event)} />
+                                    <Input name="state" onChange={(event) => handleChange(index, event)} 
+                                    defaultValue={item.state}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>Start Date</label>
-                                    <Input type="date" name="startDate" onChange={(event) => handleChange(index, event)} />
+                                    <Input type="date" name="startDate" onChange={(event) => handleChange(index, event)} 
+                                    defaultValue={item.startDate}/>
                                 </div>
                                 <div>
                                     <label className='text-sm'>End Date</label>
-                                    <Input type="date" name="endDate" onChange={(event) => handleChange(index, event)} />
+                                    <Input type="date" name="endDate" onChange={(event) => handleChange(index, event)} 
+                                    defaultValue={item.endDate}/>
                                 </div>
                                 <div className='col-span-2'>
                                     {/* Work Summary */}
