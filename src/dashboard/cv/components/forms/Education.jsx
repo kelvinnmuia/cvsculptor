@@ -24,6 +24,9 @@ function Education() {
         }
     ])
 
+    useEffect(()=>{
+        cvInfo&&setEducationalList(cvInfo?.education)
+    },[cvInfo])
     const handleChange = (event, index) => {
         const newEntries = educationalList.slice();
         const { name, value } = event.target;
@@ -53,7 +56,7 @@ function Education() {
         setLoading(true);
         const data={
             data:{
-                education:educationalList
+                experience:experienceList.map(({ id, ...rest}) => rest)
             }
         }
 
