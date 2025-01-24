@@ -1,11 +1,28 @@
 import Header from '@/components/custom/Header'
 import { Button } from '@/components/ui/button'
+import { CvInfoContext } from '@/context/CvInfoContext'
 import CvPreview from '@/dashboard/cv/components/CvPreview'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import GlobalApi from './../../../../service/GlobalApi'
 
 function ViewCv() {
+
+  const [cvInfo,setCvInfo]=useState();
+  const {cvId}=useParams();
+  
+  useEffect(()=>{
+    GetCvInfo();
+  })
+  const GetCvInfo=()=>{{
+    GlobalApi.GetCvById(cvId).then(resp=>{
+      console.log(resp.data.data);
+      setCvInfo(resp.data.data);
+    })
+  }}
+
   return (
-    <div>
+    <CvInfoContext.Provider value={{cvInfo,setCvInfo}}>
       <Header />
 
       <div className='my-10 mx-10 md:mx-20 lg:mx-36'>
@@ -19,7 +36,7 @@ function ViewCv() {
           <CvPreview />
         </div>
       </div>
-    </div>
+    </CvInfoContext.Provider>
   )
 }
 
