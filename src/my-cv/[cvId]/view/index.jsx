@@ -27,8 +27,8 @@ function ViewCv() {
 
   return (
     <CvInfoContext.Provider value={{cvInfo,setCvInfo}}>
+      <div id="no-print">
       <Header />
-
       <div className='my-10 mx-10 md:mx-20 lg:mx-36'>
         <h2 className='text-center text-2xl font-medium'>Congrats! Your Ultimate AI generated Cv is ready</h2>
         <p className='text-center text-gray-400'>You can Now download and share your CV</p>
@@ -36,10 +36,11 @@ function ViewCv() {
           <Button onClick={HandleDownload}>Download</Button>
           <Button>Share</Button>
         </div>
-        <div id="print-area">
+      </div>
+      </div>
+      <div id="print-area">
           <CvPreview />
         </div>
-      </div>
     </CvInfoContext.Provider>
   )
 }
