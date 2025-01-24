@@ -9,6 +9,7 @@ import Home from './home/index.jsx'
 import Dashboard from './dashboard/index.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
 import EditCv from './dashboard/cv/[cvId]/edit'
+import { View } from 'lucide-react'
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 const router=createBrowserRouter([
@@ -32,6 +33,10 @@ const router=createBrowserRouter([
   {
     path:'/auth/sign-in',
     element:<SignInPage/>
+  },
+  {
+    path:'/my-cv/:cvId/view',
+    element:<ViewCv/>
   }
 ])
 
