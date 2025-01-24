@@ -18,6 +18,10 @@ function Skills() {
     const {cvId}=useParams();
     const [loading,setLoading]=useState(false);
     const {cvInfo,setCvInfo}=useContext(CvInfoContext);
+
+    useEffect(()=>{
+        cvInfo&&setSkillsList(cvInfo?.skills)
+    },[])
     const handleChange = (index,name,value) => {
         const newEntries = skillsList.slice();
         newEntries[index][name] = value;
@@ -71,7 +75,9 @@ function Skills() {
                     <div className='flex justify-between mb-2 border rounded-lg p-3'>
                         <div>
                             <label className='text-sm'>Name</label>
-                            <Input className="w-full" onChange={(e) => handleChange(index, 'name', e.target.value)} />
+                            <Input className="w-full" 
+                            defaultValue={item.name}
+                            onChange={(e) => handleChange(index, 'name', e.target.value)} />
                         </div>
                         <Rating style={{ maxWidth: 120 }} value={item.rating} onChange={(v) => handleChange(index, 'rating', v)} />
                     </div>
