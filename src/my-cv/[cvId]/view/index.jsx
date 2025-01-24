@@ -5,6 +5,7 @@ import CvPreview from '@/dashboard/cv/components/CvPreview'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import GlobalApi from './../../../../service/GlobalApi'
+import { RWebShare } from 'react-web-share'
 
 function ViewCv() {
 
@@ -40,8 +41,8 @@ function ViewCv() {
             <RWebShare
               data={{
                 text: "Hello Everyone!, This is my cv please check it out",
-                url: "https://on.natgeo.com/2zHaNup",
-                title: "Flamingos",
+                url: "import.meta.env.VITE_APP_URL" + "/my-cv/" + cvId + "/view",
+                title: cvInfo?.firstName+" "+cvInfo?.lastName+" CV",
               }}
               onClick={() => console.log("shared successfully!")}
             >
