@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { act, useState } from 'react'
 import PersonalDetail from './forms/PersonalDetail'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, ArrowRight, Home, LayoutGrid } from 'lucide-react'
@@ -6,11 +6,12 @@ import Summary from './forms/Summary';
 import Experience from './forms/Experience';
 import Education from './forms/Education';
 import Skills from './forms/Skills';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 
 function FormSection() {
   const [activeFormIndex,setActiveFormIndex]=useState(1);
   const [enableNext,setEnableNext]=useState(false);
+  const {cvId}=useParams();
   return (
     <div>
       <div className='flex justify-between items-center'>
@@ -43,6 +44,8 @@ function FormSection() {
             <Education />
             :activeFormIndex==5?
             <Skills />
+            :activeFormIndex==6?
+            <Navigate to={'/my-cv/'+cvId+"/view"}/>
             :null
     }
     {/* Experience */}
