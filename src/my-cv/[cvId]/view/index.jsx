@@ -1,5 +1,6 @@
 import Header from '@/components/custom/Header'
 import { Button } from '@/components/ui/button'
+import CvPreview from '@/dashboard/cv/components/CvPreview'
 import React from 'react'
 
 function ViewCv() {
@@ -13,6 +14,9 @@ function ViewCv() {
         <div className='flex justify-between px-44 my-10'>
           <Button>Download</Button>
           <Button>Share</Button>
+        </div>
+        <div>
+          <CvPreview />
         </div>
       </div>
     </div>
