@@ -8,7 +8,7 @@ function ViewCv() {
       <Header />
 
       <div>
-        <h2>Congrats! Your Ultimate AI generated Cv is ready</h2>
+        <h2 className='text-center text-2xl font-medium'>Congrats! Your Ultimate AI generated Cv is ready</h2>
         <div>
           <Button>Download</Button>
           <Button>Share</Button>
