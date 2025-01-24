@@ -5,6 +5,7 @@ import CvPreview from '@/dashboard/cv/components/CvPreview'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import GlobalApi from './../../../../service/GlobalApi'
+import { c } from 'vite/dist/node/types.d-aGj9QkWt'
 
 function ViewCv() {
 
@@ -20,6 +21,10 @@ function ViewCv() {
       setCvInfo(resp.data.data);
     })
   }}
+
+  const HandleDownload=()=>{
+    window.print();
+  }
 
   return (
     <CvInfoContext.Provider value={{cvInfo,setCvInfo}}>
