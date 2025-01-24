@@ -5,7 +5,6 @@ import CvPreview from '@/dashboard/cv/components/CvPreview'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import GlobalApi from './../../../../service/GlobalApi'
-import { c } from 'vite/dist/node/types.d-aGj9QkWt'
 
 function ViewCv() {
 
@@ -34,10 +33,10 @@ function ViewCv() {
         <h2 className='text-center text-2xl font-medium'>Congrats! Your Ultimate AI generated Cv is ready</h2>
         <p className='text-center text-gray-400'>You can Now download and share your CV</p>
         <div className='flex justify-between px-44 my-10'>
-          <Button>Download</Button>
+          <Button onClick={HandleDownload}>Download</Button>
           <Button>Share</Button>
         </div>
-        <div>
+        <div id="print-area">
           <CvPreview />
         </div>
       </div>
