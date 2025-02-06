@@ -33,15 +33,17 @@ function CvCardItem({ cv }) {
           <img src="./cv.png" width={80} height={80} />
         </div>
       </Link>
-      <div>
+      <div className='border p-3 flex justify-between text-white mt-0.5'
+      style={{
+        background:cv?.themeColor
+      }}
+      >
         <h2 className='text-center my-1'>{cv.title}</h2>
         <DropdownMenu>
           <DropdownMenuTrigger>
-          <MoreVertical className='h-4 w-4 cursor-pointer px-10' />
+          <MoreVertical className='h-4 w-4 cursor-pointer' />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-            <DropdownMenuSeparator />
             <DropdownMenuItem>Profile</DropdownMenuItem>
             <DropdownMenuItem>Billing</DropdownMenuItem>
             <DropdownMenuItem>Team</DropdownMenuItem>
