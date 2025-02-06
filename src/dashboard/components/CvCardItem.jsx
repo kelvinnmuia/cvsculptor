@@ -32,9 +32,10 @@ function CvCardItem({ cv }) {
         <img src="./cv.png" width={80} height={80} />
       </div>
       <h2 className='text-center my-1'>{cv.title}</h2>
-      <MoreVertical className='h-4 w-4 cursor-pointer' />
       <DropdownMenu>
-        <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+        <DropdownMenuTrigger>
+        <MoreVertical className='h-4 w-4 cursor-pointer' />
+        </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
