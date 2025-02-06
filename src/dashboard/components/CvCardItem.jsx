@@ -33,7 +33,7 @@ function CvCardItem({ cv }) {
           <img src="./cv.png" width={80} height={80} />
         </div>
       </Link>
-      <div className='border p-3 flex justify-between text-white -mb-5 rounded-sm'
+      <div className='border p-3 flex justify-between text-white -mt-5 rounded-b-lg'
       style={{
         background: '#fca40c',
       }}
@@ -44,10 +44,10 @@ function CvCardItem({ cv }) {
           <MoreVertical className='h-4 w-4 cursor-pointer' />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Billing</DropdownMenuItem>
-            <DropdownMenuItem>Team</DropdownMenuItem>
-            <DropdownMenuItem>Subscription</DropdownMenuItem>
+            <DropdownMenuItem>Edit</DropdownMenuItem>
+            <DropdownMenuItem>View</DropdownMenuItem>
+            <DropdownMenuItem>Download</DropdownMenuItem>
+            <DropdownMenuItem>Delete</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
