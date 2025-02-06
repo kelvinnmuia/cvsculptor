@@ -33,9 +33,9 @@ function CvCardItem({ cv }) {
           <img src="./cv.png" width={80} height={80} />
         </div>
       </Link>
-      <div className='border p-3 flex justify-between text-white mt-0.5'
+      <div className='border p-3 flex justify-between text-white -mb-5 rounded-sm'
       style={{
-        background:cv?.themeColor
+        background: '#fca40c',
       }}
       >
         <h2 className='text-center my-1'>{cv.title}</h2>
