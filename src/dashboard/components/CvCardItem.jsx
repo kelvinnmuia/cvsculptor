@@ -34,7 +34,7 @@ function CvCardItem({ cv }) {
       <h2 className='text-center my-1'>{cv.title}</h2>
       <DropdownMenu>
         <DropdownMenuTrigger>
-        <MoreVertical className='h-4 w-4 cursor-pointer' />
+        <MoreVertical className='h-4 w-4 cursor-pointer px-10' />
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
