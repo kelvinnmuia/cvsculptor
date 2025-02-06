@@ -1,6 +1,15 @@
 import { MoreVertical } from 'lucide-react'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 /**
  * A component that renders a card for a CV.
  *
