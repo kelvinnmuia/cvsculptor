@@ -7,6 +7,17 @@ import { useParams } from 'react-router-dom'
 import GlobalApi from './../../../../service/GlobalApi'
 import { RWebShare } from 'react-web-share'
 
+/**
+ * A component that renders a CV.
+ *
+ * This component fetches the CV data by cvId when mounted and then renders the
+ * CV preview component.
+ *
+ * The component also renders a header and a section with a button to download
+ * the CV and a button to share the CV.
+ *
+ * @returns {JSX.Element} The rendered ViewCv component.
+ */
 function ViewCv() {
 
   const [cvInfo, setCvInfo] = useState();
@@ -15,6 +26,12 @@ function ViewCv() {
   useEffect(() => {
     GetCvInfo();
   })
+  /**
+   * Fetches the CV data by cvId and updates the cvInfo state.
+   *
+   * The function makes a GET request to the server and then sets the cvInfo
+   * state with the fetched data.
+   */
   const GetCvInfo = () => {
     {
       GlobalApi.GetCvById(cvId).then(resp => {

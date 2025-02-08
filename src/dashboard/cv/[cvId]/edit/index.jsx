@@ -6,6 +6,15 @@ import FormSection from '../../components/FormSection';
 import CvPreview from '../../components/CvPreview';
 import GlobalApi from './../../../../../service/GlobalApi';
 
+/**
+ * EditCv Component
+ * 
+ * This component is used to edit a cv. The component fetches the cv data by cvId
+ * and then provides the cv data to the context provider so that it can be used
+ * in child components. The component renders a form section and a preview section
+ * 
+ * @returns {JSX.Element} The EditCv Component
+ */
 function EditCv() {
     const {cvId}=useParams();
     const [cvInfo,setCvInfo]=useState();
@@ -13,6 +22,12 @@ function EditCv() {
       GetCvInfo();
     },[])
 
+    /**
+     * GetCvInfo Function
+     * 
+     * This function is used to get the cv data by cvId. It makes a GET request to the
+     * server and then sets the cv data to the state.
+     */
     const GetCvInfo=()=>{
       GlobalApi.GetCvById(cvId).then(resp=>{
         console.log(resp.data.data)
