@@ -13,6 +13,19 @@ import { View } from 'lucide-react'
 import ViewCv from './my-cv/[cvId]/view'
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+/**
+ * Defines the routes for the application using `createBrowserRouter`.
+ * 
+ * Routes:
+ * - `/` - Renders the `Home` component.
+ * - `/auth/sign-in` - Renders the `SignInPage` component.
+ * - `/my-cv/:cvId/view` - Renders the `ViewCv` component.
+ * - `/dashboard` - Renders the `Dashboard` component as a child of `App`.
+ * - `/dashboard/cv/:cvId/edit` - Renders the `EditCv` component as a child of `App`.
+ * 
+ * @constant
+ * @type {Array<Object>}
+ */
 const router=createBrowserRouter([
   {
     element:<App/>,
