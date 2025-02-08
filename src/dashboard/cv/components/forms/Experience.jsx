@@ -17,6 +17,12 @@ const formField = {
     endDate: '',
     workSummary: ''
 }
+/**
+ * The Experience component is used to display the experience form for a CV.
+ * 
+ * It displays a form with fields for each experience entry, and allows the user to add or remove entries.
+ * When the user clicks the save button, it sends an update request to the server using the GlobalApi.UpdateCvDetail method.
+ */
 function Experience() {
     const [experienceList, setExperienceList] = useState([
         {
@@ -31,6 +37,17 @@ function Experience() {
     useEffect(() => {
         cvInfo&&setExperienceList(cvInfo?.experience)
     }, [cvInfo])
+/*************  ✨ Codeium Command ⭐  *************/
+/**
+ * Updates the experience list state with the new value from the form input.
+ *
+ * @param {number} index - The index of the experience entry to update.
+ * @param {Object} event - The event object from the input field.
+ * @param {string} event.target.name - The name of the input field.
+ * @param {string} event.target.value - The new value for the input field.
+ */
+
+/******  5356a989-8075-4da2-b03e-ff79eeb0f6a3  *******/
     const handleChange = (index, event) => {
         const newEntries = experienceList.slice();
         const { name, value } = event.target;
@@ -38,14 +55,45 @@ function Experience() {
         setExperienceList(newEntries);
     }
 
+    /**
+     * Adds a new experience entry to the experience list state.
+     * 
+     * When called, it creates a new array with the existing experience entries and adds the formField object (which is the empty state of an experience entry) to the end.
+     * The new array is then set as the new state for the experienceList.
+     */
     const AddNewExperience = () => {
         setExperienceList([...experienceList, formField])
     }
 
+    /**
+     * Removes the last experience entry from the experience list state.
+     * 
+     * When called, it creates a new array with all the experience entries except the last one,
+     * and sets the new array as the new state for the experienceList.
+     */
     const RemoveExperience = () => {
         setExperienceList(experienceList => experienceList.slice(0, -1))
     }
 
+/**
+ * Saves the current experience details to the server.
+ * 
+ * This function sets the loading state to true, prepares the data by removing
+ * the 'id' field from each experience entry, and sends an update request to
+ * the server using the GlobalApi.UpdateCvDetail method. On a successful response,
+ * it logs the response, sets the loading state to false, and displays a success toast.
+ * In case of an error, it resets the loading state and shows an error toast.
+ */
+
+    /**
+     * Saves the current experience details to the server.
+     * 
+     * This function sets the loading state to true, prepares the data by removing
+     * the 'id' field from each experience entry, and sends an update request to
+     * the server using the GlobalApi.UpdateCvDetail method. On a successful response,
+     * it logs the response, sets the loading state to false, and displays a success toast.
+     * In case of an error, it resets the loading state and shows an error toast.
+     */
     const onSave = () => {
         setLoading(true);
         const data={
@@ -64,6 +112,14 @@ function Experience() {
         })
     }
 
+    /**
+     * Handles the change event of the RichTextEditor component and updates the
+     * corresponding experience entry in the experienceList state.
+     * 
+     * @param {Object} e - The event object from the RichTextEditor component.
+     * @param {string} name - The name of the field to update.
+     * @param {number} index - The index of the experience entry to update.
+     */
     const handleRichTextEditor = (e, name, index) => {
         const newEntries = experienceList.slice();
         newEntries[index][name] = e.target.value;

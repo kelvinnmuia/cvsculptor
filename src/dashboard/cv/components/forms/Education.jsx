@@ -8,6 +8,59 @@ import { useParams } from 'react-router-dom'
 import { toast } from 'sonner'
 import GlobalApi from './../../../../../service/GlobalApi'
 
+/**
+ * Education component allows users to add, edit, and remove their educational details.
+ * It maintains a list of educational entries and updates the CV information context.
+ * 
+ * @component
+ * 
+ * @example
+ * return (
+ *   <Education />
+ * )
+ * 
+ * @returns {JSX.Element} The Education component.
+ * 
+ * @function
+ * @name Education
+ * 
+ * @description
+ * - Uses `useState` to manage the loading state and the list of educational entries.
+ * - Uses `useContext` to access and update the CV information context.
+ * - Uses `useEffect` to synchronize the educational list with the CV information context.
+ * - Provides functions to handle changes in the educational entries, add new entries, remove entries, and save the updated information.
+ * 
+ * @hook
+ * @name useState
+ * @description Manages the loading state and the list of educational entries.
+ * 
+ * @hook
+ * @name useContext
+ * @description Accesses and updates the CV information context.
+ * 
+ * @hook
+ * @name useEffect
+ * @description Synchronizes the educational list with the CV information context.
+ * 
+ * @param {Object} event - The event object from the input change.
+ * @param {number} index - The index of the educational entry being updated.
+ * 
+ * @function
+ * @name handleChange
+ * @description Handles changes in the educational entries.
+ * 
+ * @function
+ * @name AddNewEducation
+ * @description Adds a new educational entry to the list.
+ * 
+ * @function
+ * @name RemoveEducation
+ * @description Removes the last educational entry from the list.
+ * 
+ * @function
+ * @name onSave
+ * @description Saves the updated educational information and updates the CV details.
+ */
 function Education() {
 
     const [loading, setLoading] = useState(false);
@@ -27,6 +80,12 @@ function Education() {
     useEffect(()=>{
         cvInfo&&setEducationalList(cvInfo?.education)
     },[cvInfo])
+    /**
+     * Handles changes in the educational entries.
+     * 
+     * @param {Object} event - The event object from the input change.
+     * @param {number} index - The index of the educational entry being updated.
+     */
     const handleChange = (event, index) => {
         const newEntries = educationalList.slice();
         const { name, value } = event.target;
@@ -34,6 +93,12 @@ function Education() {
         setEducationalList(newEntries);
     }
 
+    /**
+     * Adds a new educational entry to the list.
+     * 
+     * This function is called when the user clicks the "Add" button in the educational entries section.
+     * It adds a new empty entry to the list of educational entries.
+     */
     const AddNewEducation = () => {
         setEducationalList([...educationalList,
         {
@@ -48,10 +113,23 @@ function Education() {
 
     }
 
+    /**
+     * Removes the last educational entry from the list.
+     * 
+     * This function is called when the user clicks the "Remove" button in the educational entries section.
+     * It removes the last entry from the list of educational entries.
+     */
     const RemoveEducation = () => {
         setEducationalList(educationalList => educationalList.slice(0, -1))
     }
 
+    /**
+     * Handles the save event of the educational entries.
+     * 
+     * This function is called when the user clicks the "Save" button in the educational entries section.
+     * It makes a PUT request to the server to update the cv with the new educational entries
+     * and then updates the state with the new cv data.
+     */
     const onSave = () => {
         setLoading(true);
         const data={

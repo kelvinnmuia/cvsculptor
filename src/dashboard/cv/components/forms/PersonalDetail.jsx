@@ -7,6 +7,17 @@ import { useParams } from 'react-router-dom';
 import GlobalApi from './../../../../../service/GlobalApi';
 import { toast } from 'sonner';
 
+    /**
+     * PersonalDetail Component
+     * 
+     * This component is used to edit the personal detail of a cv. The component renders a form
+     * with input fields for first name, last name, job title, address, phone and email. The component
+     * also renders a button to save the form data.
+     * 
+     * @param {boolean} enabledNext - a boolean to enable or disable the next button
+     * 
+     * @returns {JSX.Element} The PersonalDetail Component
+     */
 function PersonalDetail({enabledNext}) {
     const params=useParams();
     const {cvInfo,setCvInfo}=useContext(CvInfoContext)
@@ -18,6 +29,15 @@ function PersonalDetail({enabledNext}) {
         console.log(params)
     },[])
 
+    /**
+     * Handles changes in the form input fields.
+     * 
+     * This function is called every time a user types something in the input fields.
+     * The function disables the next button, gets the name and value of the input field,
+     * updates the formData state and the cvInfo state.
+     * 
+     * @param {Object} e - The event object from the input change.
+     */
     const handleInputChange=(e)=>{
         enabledNext(false)
         const {name,value}=e.target;
@@ -33,6 +53,15 @@ function PersonalDetail({enabledNext}) {
         })
     }
 
+    /**
+     * Saves the personal details form data to the server.
+     * 
+     * This function is called when the user clicks the "Save" button in the personal details section.
+     * It sets the loading state to true, prepares the data to be sent to the server, makes a PUT request
+     * to the server to update the cv with the new data, and then updates the state with the new cv data.
+     * On a successful response, it logs the response, sets the loading state to false, and displays a success toast.
+     * In case of an error, it resets the loading state and shows an error toast.
+     */
     const onSave=(e)=>{
         e.preventDefault();
         enabledNext(true)

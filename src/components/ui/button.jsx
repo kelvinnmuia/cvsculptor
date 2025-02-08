@@ -4,6 +4,29 @@ import { cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Generates a set of class names for button components based on variant and size options.
+ *
+ * @param {string} baseClass - The base class names for the button.
+ * @param {Object} options - The options for generating the class names.
+ * @param {Object} options.variants - The variant options for the button.
+ * @param {Object} options.variants.variant - The different style variants for the button.
+ * @param {string} options.variants.variant.default - Default button style.
+ * @param {string} options.variants.variant.destructive - Destructive button style.
+ * @param {string} options.variants.variant.outline - Outline button style.
+ * @param {string} options.variants.variant.secondary - Secondary button style.
+ * @param {string} options.variants.variant.ghost - Ghost button style.
+ * @param {string} options.variants.variant.link - Link button style.
+ * @param {Object} options.variants.size - The different size options for the button.
+ * @param {string} options.variants.size.default - Default button size.
+ * @param {string} options.variants.size.sm - Small button size.
+ * @param {string} options.variants.size.lg - Large button size.
+ * @param {string} options.variants.size.icon - Icon button size.
+ * @param {Object} options.defaultVariants - The default variant options for the button.
+ * @param {string} options.defaultVariants.variant - The default style variant.
+ * @param {string} options.defaultVariants.size - The default size variant.
+ * @returns {string} The generated class names for the button.
+ */
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {

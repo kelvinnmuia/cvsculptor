@@ -1,5 +1,19 @@
 import React from 'react'
 
+/**
+ * PersonalDetailPreview Component
+ * 
+ * This component is used to render the personal details section on the cv preview
+ * 
+ * @param {Object} cvInfo - The cv information object
+ * @prop {string} cvInfo.firstName - The first name of the person
+ * @prop {string} cvInfo.lastName - The last name of the person
+ * @prop {string} cvInfo.jobTitle - The job title of the person
+ * @prop {string} cvInfo.address - The address of the person
+ * @prop {string} cvInfo.phone - The phone number of the person
+ * @prop {string} cvInfo.email - The email address of the person
+ * @prop {string} cvInfo.themeColor - The theme color of the cv
+ */
 function PersonalDetailPreview({cvInfo}) {
   return (
     <div>

@@ -1,5 +1,13 @@
 import React from 'react'
 
+/**
+ * EducationalPreview Component
+ * 
+ * This component is used to display a list of educational entries 
+ * 
+ * @param {Object} cvInfo - the cv data
+ * @returns {JSX.Element} The EducationalPreview Component
+ */
 function EducationalPreview({cvInfo}) {
   return (
     <div className='my-6'>

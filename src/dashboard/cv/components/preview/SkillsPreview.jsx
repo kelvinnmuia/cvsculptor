@@ -1,5 +1,13 @@
 import React from 'react'
 
+/**
+ * A component to preview the skills in a CV.
+ * 
+ * The component renders a heading in the theme color, and then a grid of skills. Each skill is rendered as a flexbox with the skill name on the left and the skill rating on the right. The skill rating is rendered as a horizontal bar with the length of the bar proportional to the rating.
+ * 
+ * @param {{cvInfo: {themeColor: string, skills: {name: string, rating: number}[]}}} props The theme color and the skills to render.
+ * @returns {JSX.Element} The rendered SkillsPreview component.
+ */
 function SkillsPreview({cvInfo}) {
   return (
     <div className='my-6'>

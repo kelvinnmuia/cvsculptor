@@ -9,6 +9,16 @@ import { toast } from 'sonner';
 import { AIChatSession } from './../../../../../service/AIModel';
 
 const prompt="Job Title: {jobTitle}, Depends on job title give me summary for my cv within 4 - 5 lines in JSON format with field experienceLevel and Summary with Experience level for Fresher, Mid-Level, Experienced."
+    /**
+     * @description Summary component 
+     * This component is used to save the summary of the cv.
+     * This component is used in the edit cv page.
+     * This component uses the cvInfo context to get the cv data and the UpdateCvDetail function from the GlobalApi to update the cv data.
+     * 
+     * @param {boolean} enabledNext - This is a boolean value that is passed to the component to enable or disable the next button.
+     * 
+     * @returns {ReactElement}
+     */
 function Summary({enabledNext}) {
     const {cvInfo,setCvInfo}=useContext(CvInfoContext);
     const [summary,setSummary]=useState();
@@ -23,6 +33,16 @@ function Summary({enabledNext}) {
         })
     },[summary])
 
+    /**
+     * Generates a summary from AI model based on job title.
+     * 
+     * When called, it creates a prompt string by replacing {jobTitle} in the prompt string with the job title from the cv data.
+     * It then sends the prompt to the AI model and waits for the response.
+     * The response is then parsed as JSON and set as the aiGeneratedSummaryList state.
+     * The loading state is then set to false.
+     * 
+     * @returns {Promise<void>}
+     */
     const GenerateSummaryFromAI=async()=>{
         setLoading(true);
         const PROMPT=prompt.replace("{jobTitle}",cvInfo?.jobTitle);
@@ -32,6 +52,18 @@ function Summary({enabledNext}) {
         setAiGeneratedSummaryList(JSON.parse([result.response.text()]));
         setLoading(false);
     }
+
+/**
+ * Handles the save event for the summary section of the cv form.
+ * 
+ * This function prevents the default form submission, sets the loading state to true,
+ * and prepares the summary data to be sent to the server. It then makes a PUT request
+ * to update the cv details using the GlobalApi.UpdateCvDetail method. On a successful response,
+ * it logs the response, sets the loading state to false, and displays a success toast.
+ * In case of an error, it resets the loading state.
+ * 
+ * @param {Event} e - The event object representing the form submission event.
+ */
 
     const onSave=(e)=>{
         e.preventDefault();

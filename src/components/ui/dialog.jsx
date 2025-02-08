@@ -23,6 +23,17 @@ const DialogOverlay = React.forwardRef(({ className, ...props }, ref) => (
 ))
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 
+/**
+ * DialogContent component renders a dialog with overlay and close button.
+ * It uses `React.forwardRef` to forward the ref to the `DialogPrimitive.Content` component.
+ *
+ * @component
+ * @param {Object} props - The props that are passed to the component.
+ * @param {string} [props.className] - Additional class names to apply to the dialog content.
+ * @param {React.ReactNode} props.children - The content to be displayed inside the dialog.
+ * @param {React.Ref} ref - The ref to be forwarded to the `DialogPrimitive.Content` component.
+ * @returns {JSX.Element} The rendered dialog content component.
+ */
 const DialogContent = React.forwardRef(({ className, children, ...props }, ref) => (
   <DialogPortal>
     <DialogOverlay />

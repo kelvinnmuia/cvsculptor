@@ -8,6 +8,16 @@ import EducationalPreview from './preview/EducationalPreview';
 import SkillsPreview from './preview/SkillsPreview';
 
 
+/**
+ * CvPreview Component
+ * 
+ * This component renders a comprehensive preview of the CV, displaying various
+ * sections such as personal details, summary, professional experience, education,
+ * and skills. Each section is rendered using respective preview components that
+ * receive the `cvInfo` object for displaying relevant data. The component uses
+ * the theme color from `cvInfo` to style the border.
+ */
+
 function CvPreview() {
   const {cvInfo,setCvInfo}=useContext(CvInfoContext);
   return (

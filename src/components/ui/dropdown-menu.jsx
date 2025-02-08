@@ -44,6 +44,17 @@ const DropdownMenuSubContent = React.forwardRef(({ className, ...props }, ref) =
 DropdownMenuSubContent.displayName =
   DropdownMenuPrimitive.SubContent.displayName
 
+/**
+ * DropdownMenuContent is a React forwardRef component that renders a dropdown menu content
+ * using DropdownMenuPrimitive.Portal and DropdownMenuPrimitive.Content.
+ *
+ * @component
+ * @param {Object} props - The props that are passed to the component.
+ * @param {string} [props.className] - Additional class names to apply to the dropdown content.
+ * @param {number} [props.sideOffset=4] - The offset of the dropdown content from its trigger.
+ * @param {Object} props.ref - The ref to be forwarded to the DropdownMenuPrimitive.Content component.
+ * @returns {JSX.Element} The rendered dropdown menu content.
+ */
 const DropdownMenuContent = React.forwardRef(({ className, sideOffset = 4, ...props }, ref) => (
   <DropdownMenuPrimitive.Portal>
     <DropdownMenuPrimitive.Content

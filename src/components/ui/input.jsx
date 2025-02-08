@@ -2,6 +2,15 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * A forward-ref input component with customizable styles and props.
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @param {string} [props.className] - Additional class names to apply to the input element.
+ * @param {string} [props.type] - The type of the input element.
+ * @param {React.Ref} ref - The ref to be forwarded to the input element.
+ * @returns {JSX.Element} The rendered input element.
+ */
 const Input = React.forwardRef(({ className, type, ...props }, ref) => {
   return (
     (<input

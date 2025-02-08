@@ -2,6 +2,15 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * A custom textarea component that forwards its ref and accepts additional props.
+ *
+ * @component
+ * @param {Object} props - The props object.
+ * @param {string} [props.className] - Additional class names to apply to the textarea.
+ * @param {React.Ref} ref - The ref to be forwarded to the textarea element.
+ * @returns {JSX.Element} The rendered textarea component.
+ */
 const Textarea = React.forwardRef(({ className, ...props }, ref) => {
   return (
     (<textarea

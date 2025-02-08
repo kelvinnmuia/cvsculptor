@@ -8,10 +8,32 @@ import { toast } from 'sonner';
 
 const PROMPT=`position title: {positionTitle}, Based on the position title, provide 5-7 bullet points for my experience in resume. 
 Return the response as a JSON array of strings`;
+/**
+ * RichTextEditor component for editing text with formatting options.
+ *
+ * This component provides a rich text editor with a toolbar for formatting options
+ * such as bold, italic, underline, and more. It also includes a button to generate
+ * a summary from AI based on the position title in the user's experience.
+ *
+ * @param {Function} onRichTextEditorChange - Callback function to handle text change events.
+ * @param {number} index - The index of the experience item in the CV information.
+ * @param {string} defaultValue - The initial value of the editor.
+ * @returns {JSX.Element} The rendered RichTextEditor component.
+ */
+
 function RichTextEditor({onRichTextEditorChange,index,defaultValue}) {
     const [value,setValue] = useState(defaultValue);
     const {cvInfo,setCvInfo}=useContext(CvInfoContext);
     const [loading,setLoading]=useState(false);
+    /**
+     * Generates a summary from AI based on the position title in the user's experience.
+     * 
+     * This function sends a message to the AI chat session with the prompt to generate a summary
+     * based on the position title in the user's experience. It then replaces the current value of the
+     * rich text editor with the response from the AI and sets the loading state to false.
+     * 
+     * If the position title is empty, it shows a toast message to add the position title.
+     */
     const GenerateSummaryFromAI=async()=>{
         setLoading(true);
         if (!cvInfo.experience[index].title)

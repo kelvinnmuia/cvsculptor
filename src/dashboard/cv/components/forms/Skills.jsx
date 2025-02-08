@@ -9,6 +9,14 @@ import GlobalApi from './../../../../../service/GlobalApi'
 import { toast } from 'sonner'
 import { useParams } from 'react-router-dom'
 
+    /**
+     * This component is used to edit the skills section of a cv. It
+     * provides a form with fields to add, edit, and remove skills. The
+     * component fetches the skills data from the server and provides them
+     * to the context provider so that it can be used in other components.
+     *
+     * @returns {JSX.Element} The Skills component
+     */
 function Skills() {
     const [skillsList, setSkillsList] = useState([{
         name: '',
@@ -22,12 +30,25 @@ function Skills() {
     useEffect(()=>{
         cvInfo&&setSkillsList(cvInfo?.skills)
     },[])
+    /**
+     * Handles changes in the skills entries.
+     * 
+     * @param {number} index - The index of the skill entry being updated.
+     * @param {string} name - The name of the field to update.
+     * @param {string} value - The new value of the field.
+     */
     const handleChange = (index,name,value) => {
         const newEntries = skillsList.slice();
         newEntries[index][name] = value;
         setSkillsList(newEntries);
     }
 
+    /**
+     * Adds a new skill entry to the skills list state.
+     * 
+     * When called, it creates a new array with the existing skills entries and adds the formField object (which is the empty state of a skills entry) to the end.
+     * The new array is then set as the new state for the skillsList.
+     */
     const AddNewSkills=()=>{
         setSkillsList([...skillsList,{
             name:'',
@@ -35,10 +56,23 @@ function Skills() {
         }])
     }
 
+    /**
+     * Removes the last skill entry from the skills list state.
+     * 
+     * When called, it creates a new array with all the skill entries except the last one,
+     * and sets the new array as the new state for the skillsList.
+     */
     const RemoveSkills=()=>{
         setSkillsList(skillsList=>skillsList.slice(0,-1))
     }
 
+    /**
+     * Handles the save event of the skills entries.
+     * 
+     * This function is called when the user clicks the "Save" button in the skills entries section.
+     * It makes a PUT request to the server to update the cv with the new skills entries
+     * and then updates the state with the new cv data.
+     */
     const onSave=()=>{
         setLoading(true)
         const data={
