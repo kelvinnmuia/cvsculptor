@@ -3,6 +3,12 @@ import { Button } from '../ui/button'
 import { Link } from 'react-router-dom'
 import { UserButton, useUser } from '@clerk/clerk-react'
 
+/**
+ * A header component that renders a login button when the user is not signed in and
+ * a dashboard button and the user button when the user is signed in.
+ *
+ * @returns {JSX.Element} The rendered Header component.
+ */
 function Header() {
   const { user, isSignedIn } = useUser();
   return (
