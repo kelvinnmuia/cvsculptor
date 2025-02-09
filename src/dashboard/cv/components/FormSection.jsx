@@ -79,6 +79,7 @@ function FormSection() {
             <Navigate to={'/my-cv/'+cvId+"/view"}/>
             :null
     }
+    
     </div>
   )
 }
