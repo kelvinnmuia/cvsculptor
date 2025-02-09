@@ -83,8 +83,6 @@ function FormSection() {
 
       {/* Educational Detail */}
 
-      {/* Skills */}
-
     </div>
   )
 }
