@@ -8,16 +8,19 @@ import EducationalPreview from './preview/EducationalPreview';
 import SkillsPreview from './preview/SkillsPreview';
 
 
+
 /**
  * CvPreview Component
  * 
- * This component renders a comprehensive preview of the CV, displaying various
- * sections such as personal details, summary, professional experience, education,
- * and skills. Each section is rendered using respective preview components that
- * receive the `cvInfo` object for displaying relevant data. The component uses
- * the theme color from `cvInfo` to style the border.
+ * This component is used to render a preview of a CV based on the cvInfo object
+ * 
+ * The component renders a card with a border at the top with the theme color of the CV.
+ * 
+ * The component renders the personal details, summary, professional experience, education and skills of the CV.
+ * 
+ * @param {Object} cvInfo - The object containing the data of the CV.
+ * @returns {JSX.Element} The rendered component.
  */
-
 function CvPreview() {
   const {cvInfo,setCvInfo}=useContext(CvInfoContext);
   return (
